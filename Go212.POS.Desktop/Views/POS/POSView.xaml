@@ -148,11 +148,12 @@
                     <!-- Held tickets -->
                     <Button HorizontalAlignment="Right"
                             Style="{StaticResource ActionButton}"
-                            Command="{Binding ShowHeldTicketsCommand}"
-                            Visibility="{Binding HasHeldTickets, Converter={StaticResource BoolToVisibleConverter}}">
+                            Command="{Binding ResumeHeldTicketCommand}"
+                            Visibility="{Binding HasHeldTicket, Converter={StaticResource BoolToVisibleConverter}}">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="&#xE72D;" FontFamily="Segoe MDL2 Assets" FontSize="11" Margin="0,0,4,0"/>
-                            <TextBlock Text="{Binding HeldTicketCount, StringFormat='{}{0} en attente'}"/>
+                            <TextBlock Text="{Binding HeldTicketCount, StringFormat='{}{0} en attente'}"
+                                       Visibility="{Binding HasHeldTicket, Converter={StaticResource BoolToVisibleConverter}}"/>
                         </StackPanel>
                     </Button>
                 </Grid>

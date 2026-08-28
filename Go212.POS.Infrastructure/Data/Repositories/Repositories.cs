@@ -184,7 +184,7 @@ public class ProductRepository : BaseRepository<Product>, IProductRepository
     {
         await EnsureOpenAsync();
         return await Conn.QueryAsync<Product>(
-            "SELECT * FROM Product WHERE CategoryId=@CategoryId AND IsActive=1 ORDER BY Name",
+            "SELECT p.*, c.Name AS CategoryName FROM Product p LEFT JOIN Category c ON c.Id = p.CategoryId WHERE p.CategoryId=@CategoryId AND p.IsActive=1 ORDER BY p.Name",
             new { CategoryId = categoryId }, Tx);
     }
 
@@ -193,7 +193,7 @@ public class ProductRepository : BaseRepository<Product>, IProductRepository
         await EnsureOpenAsync();
         var like = $"%{query}%";
         return await Conn.QueryAsync<Product>(
-            "SELECT * FROM Product WHERE IsActive=1 AND (Name LIKE @Like OR Barcode LIKE @Like) ORDER BY Name LIMIT 50",
+            "SELECT p.*, c.Name AS CategoryName FROM Product p LEFT JOIN Category c ON c.Id = p.CategoryId WHERE p.IsActive=1 AND (p.Name LIKE @Like OR p.Barcode LIKE @Like) ORDER BY p.Name LIMIT 50",
             new { Like = like }, Tx);
     }
 
@@ -201,7 +201,7 @@ public class ProductRepository : BaseRepository<Product>, IProductRepository
     {
         await EnsureOpenAsync();
         return await Conn.QueryAsync<Product>(
-            "SELECT * FROM Product WHERE IsActive=1 AND StockQuantity <= StockAlertThreshold ORDER BY StockQuantity",
+            "SELECT p.*, c.Name AS CategoryName FROM Product p LEFT JOIN Category c ON c.Id = p.CategoryId WHERE p.IsActive=1 AND p.StockQuantity <= p.StockAlertThreshold ORDER BY p.StockQuantity",
             transaction: Tx);
     }
 
@@ -209,7 +209,7 @@ public class ProductRepository : BaseRepository<Product>, IProductRepository
     {
         await EnsureOpenAsync();
         return await Conn.QueryAsync<Product>(
-            "SELECT * FROM Product WHERE IsActive=1 ORDER BY Name",
+            "SELECT p.*, c.Name AS CategoryName FROM Product p LEFT JOIN Category c ON c.Id = p.CategoryId WHERE p.IsActive=1 ORDER BY p.Name",
             transaction: Tx);
     }
 

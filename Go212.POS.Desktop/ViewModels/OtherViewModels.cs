@@ -506,6 +506,7 @@ public partial class ManagementViewModel : ObservableObject
         return true;
     }
 
+    [RelayCommand]
     public async Task LoadAsync()
     {
         IsLoading = true;

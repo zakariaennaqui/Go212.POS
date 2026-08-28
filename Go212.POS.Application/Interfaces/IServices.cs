@@ -108,11 +108,13 @@ public record DailySalesReport(
     decimal CashTotal,
     decimal CardTotal,
     IEnumerable<TopProductItem> TopProducts,
-    IEnumerable<HourlySaleItem> HourlySales
+    IEnumerable<HourlySaleItem> HourlySales,
+    IEnumerable<PaymentBreakdownItem> PaymentBreakdown
 );
 
 public record TopProductItem(string Name, int QuantitySold, decimal Revenue);
 public record HourlySaleItem(int Hour, int Count, decimal Amount);
+public record PaymentBreakdownItem(string Method, decimal TotalAmount);
 
 /// <summary>Return / refund processing.</summary>
 public interface IReturnService

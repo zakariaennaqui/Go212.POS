@@ -137,7 +137,7 @@
                             <DataGridTextColumn Header="IDENTIFIANT"      Binding="{Binding Username}" Width="120"/>
                             <DataGridTextColumn Header="ROLE"             Binding="{Binding Role}" Width="90"/>
                             <DataGridTextColumn Header="ACTIF"            Binding="{Binding IsActive}" Width="60"/>
-                            <DataGridTextColumn Header="TENTATIVES"       Binding="{Binding FailedPinAttempts}" Width="90"/>
+                            <DataGridTextColumn Header="TENTATIVES"       Binding="{Binding FailedLoginAttempts}" Width="90"/>
                             <DataGridTextColumn Header="DERNIERE CONNEXION" Binding="{Binding LastLoginAt, StringFormat='{}{0:dd/MM/yyyy HH:mm}'}" Width="140"/>
                             <DataGridTemplateColumn Header="ACTIONS" Width="230">
                                 <DataGridTemplateColumn.CellTemplate>

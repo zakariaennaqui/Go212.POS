@@ -80,6 +80,7 @@ public partial class POSViewModel : ObservableObject
 
     // ── Held Ticket (DB-persisted) ───────────────────────────
     [ObservableProperty] private bool _hasHeldTicket;
+    [ObservableProperty] private int  _heldTicketCount;
 
     // ── Status ───────────────────────────────────────────────
     [ObservableProperty] private bool    _isLoading;
@@ -307,6 +308,7 @@ public partial class POSViewModel : ObservableObject
             CartItems.Clear();
             _currentSaleId = null;
             HasHeldTicket = true;
+            HeldTicketCount++;
             await RefreshTotalsAsync();
             StatusMessage = "Ticket mis en attente ⏸ (sauvegardé)";
             _logger.LogInformation("Ticket held in DB.");
@@ -381,7 +383,9 @@ public partial class POSViewModel : ObservableObject
         try
         {
             var sales = await _uow.Sales.GetBySessionAsync(sessionId);
-            HasHeldTicket = sales.Any(s => s.Status == SaleStatus.Held);
+            var heldSales = sales.Where(s => s.Status == SaleStatus.Held).ToList();
+            HasHeldTicket = heldSales.Count > 0;
+            HeldTicketCount = heldSales.Count;
         }
         catch (Exception ex)
         {

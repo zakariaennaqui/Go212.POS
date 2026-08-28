@@ -264,6 +264,12 @@ public class ReportService : IReportService
 
         var (cashTotal, cardTotal) = await _uow.Sales.GetPaymentTotalsByDateRangeAsync(from, to);
 
+        var paymentBreakdown = new List<PaymentBreakdownItem>
+        {
+            new("Espèces", Math.Round(cashTotal, 2)),
+            new("Carte bancaire", Math.Round(cardTotal, 2)),
+        };
+
         var topProductsRaw = await _uow.Sales.GetTopProductsByDateRangeAsync(from, to);
         var topProducts = topProductsRaw
             .Select(t => new TopProductItem(t.Name, t.QuantitySold, t.Revenue))
@@ -283,7 +289,8 @@ public class ReportService : IReportService
             CashTotal: Math.Round(cashTotal, 2),
             CardTotal: Math.Round(cardTotal, 2),
             TopProducts: topProducts,
-            HourlySales: hourlySales
+            HourlySales: hourlySales,
+            PaymentBreakdown: paymentBreakdown
         );
     }
 

@@ -45,8 +45,8 @@
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="DATE" Binding="{Binding CreatedAt, Converter={StaticResource FrenchDateConverter}}" Width="140"/>
                     <DataGridTextColumn Header="TYPE" Binding="{Binding Type}" Width="100"/>
-                    <DataGridTextColumn Header="VARIATION" Binding="{Binding QuantityDelta, StringFormat='{}{0:+0;-0;0}'}" Width="90"/>
-                    <DataGridTextColumn Header="STOCK APRÈS" Binding="{Binding BalanceAfter}" Width="100"/>
+                    <DataGridTextColumn Header="VARIATION" Binding="{Binding QuantityChange, StringFormat='{}{0:+0;-0;0}'}" Width="90"/>
+                    <DataGridTextColumn Header="STOCK APRÈS" Binding="{Binding QuantityAfter}" Width="100"/>
                     <DataGridTextColumn Header="MOTIF" Binding="{Binding Reason}" Width="*"/>
                 </DataGrid.Columns>
             </DataGrid>
