@@ -1,0 +1,9 @@
+<Project Sdk="WixToolset.Sdk/4.0.5">
+  <PropertyGroup>
+    <OutputType>Package</OutputType>
+    <OutputName>GO212_POS_Setup</OutputName>
+    <Platforms>x64</Platforms>
+    <PackageVersion>1.0.0</PackageVersion>
+    <Manufacturer>GO212</Manufacturer>
+  </PropertyGroup>
+</Project>
