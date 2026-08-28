@@ -1,0 +1,6 @@
+{
+  "name": "GO212 POS",
+  "description": "Système de caisse local Windows 100% hors-ligne pour commerçants au Maroc (.NET 10 WPF)",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -2,9 +2,10 @@ using Go212.POS.Application.Interfaces;
 using Go212.POS.Domain.Interfaces;
 using Go212.POS.Infrastructure.Backup;
 using Go212.POS.Infrastructure.Data;
+using Go212.POS.Infrastructure.Hardware;
+using Go212.POS.Infrastructure.Logging;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-
 
 namespace Go212.POS.Infrastructure;
 
@@ -22,6 +23,15 @@ public static class InfrastructureExtensions
         // Backup service
         services.AddScoped<IBackupService, BackupService>();
 
+        // Hardware & Printing
+        services.AddSingleton<IPosPrinter, WindowsSpoolerPosPrinter>();
+        services.AddScoped<ICashDrawer, CashDrawerService>();
+        services.AddSingleton<ICustomerDisplay, CustomerDisplayService>();
+
+        // Logging & Audit
+        services.AddScoped<IAuditLogger, AuditLogger>();
+
         return services;
     }
 }
+

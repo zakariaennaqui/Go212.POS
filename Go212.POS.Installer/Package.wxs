@@ -1,0 +1,44 @@
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <Package Name="GO212 POS"
+           Manufacturer="GO212"
+           Version="1.0.0"
+           UpgradeCode="B5C3D4E5-6F7A-8B9C-0D1E-2F3A4B5C6D7E"
+           Scope="perMachine">
+
+    <MajorUpgrade DowngradeErrorMessage="Une version plus récente de GO212 POS est déjà installée." />
+    
+    <MediaTemplate EmbedCab="yes" />
+
+    <StandardDirectory Id="ProgramFiles64Folder">
+      <Directory Id="INSTALLFOLDER" Name="GO212 POS">
+        <Component Id="MainExecutable" Guid="A1B2C3D4-E5F6-0123-4567-89ABCDEF0123">
+          <File Source="..\Go212.POS.Desktop\bin\Release\net10.0-windows\Go212.POS.exe" KeyPath="yes">
+            <Shortcut Name="GO212 POS"
+                      Directory="ProgramMenuFolder"
+                      WorkingDirectory="INSTALLFOLDER"
+                      Icon="AppIcon"
+                      Advertise="yes" />
+            <Shortcut Name="GO212 POS"
+                      Directory="DesktopFolder"
+                      WorkingDirectory="INSTALLFOLDER"
+                      Icon="AppIcon"
+                      Advertise="yes" />
+          </File>
+        </Component>
+      </Directory>
+    </StandardDirectory>
+
+    <StandardDirectory Id="ProgramMenuFolder" />
+    <StandardDirectory Id="DesktopFolder" />
+
+    <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+      <ComponentRef Id="MainExecutable" />
+    </ComponentGroup>
+
+    <Feature Id="MainFeature" Title="GO212 POS" Level="1">
+      <ComponentGroupRef Id="ProductComponents" />
+    </Feature>
+
+    <Icon Id="AppIcon" SourceFile="..\Go212.POS.Desktop\Assets\Images\go212_logo.svg" />
+  </Package>
+</Wix>

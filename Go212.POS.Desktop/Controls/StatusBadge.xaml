@@ -1,0 +1,22 @@
+<UserControl x:Class="Go212.POS.Desktop.Controls.StatusBadge"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="28" d:DesignWidth="90">
+    <Border x:Name="BadgeBorder"
+            Padding="8,3"
+            CornerRadius="0"
+            Background="#DCFCE7"
+            BorderBrush="#86EFAC"
+            BorderThickness="1">
+        <TextBlock x:Name="BadgeText"
+                   Text="Actif"
+                   FontSize="11"
+                   FontWeight="SemiBold"
+                   Foreground="#15803D"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"/>
+    </Border>
+</UserControl>

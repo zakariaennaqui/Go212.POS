@@ -214,4 +214,17 @@
         <Setter Property="FontSize"   Value="12"/>
     </Style>
 
+    <!-- Keypad Buttons -->
+    <Style x:Key="KeypadButton" TargetType="Button" BasedOn="{StaticResource BtnSecondary}">
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="MinHeight" Value="48"/>
+    </Style>
+
+    <Style x:Key="KeypadDangerButton" TargetType="Button" BasedOn="{StaticResource BtnDanger}">
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="MinHeight" Value="48"/>
+    </Style>
+
 </ResourceDictionary>
