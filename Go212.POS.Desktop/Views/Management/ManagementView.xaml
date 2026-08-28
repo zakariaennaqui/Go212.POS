@@ -38,7 +38,7 @@
                     </StackPanel>
                 </Button>
                 <Button Command="{Binding OpenSessionCommand}" Style="{StaticResource BtnPrimary}" Margin="0,0,8,0"
-                        Visibility="{Binding HasOpenSession, Converter={StaticResource InverseBoolConverter}}">
+                        Visibility="{Binding HasOpenSession, Converter={StaticResource InverseBoolToVisibleConverter}}">
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="&#xE713;" FontFamily="Segoe MDL2 Assets" FontSize="12" Margin="0,0,5,0"/>
                         <TextBlock Text="Ouvrir Caisse"/>

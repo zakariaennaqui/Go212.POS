@@ -50,6 +50,16 @@ public class InverseBoolConverter : IValueConverter
         => value is bool b ? !b : false;
 }
 
+/// <summary>Returns Visible if bool is false, Collapsed if true.</summary>
+public class InverseBoolToVisibilityConverter : IValueConverter
+{
+    public object Convert(object? value, Type targetType, object parameter, CultureInfo culture)
+        => value is true ? Visibility.Collapsed : Visibility.Visible;
+
+    public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        => throw new NotImplementedException();
+}
+
 /// <summary>Formats a DateTime to French locale date string.</summary>
 public class FrenchDateConverter : IValueConverter
 {

@@ -28,6 +28,7 @@
             <conv:MadCurrencyConverter         x:Key="MadCurrencyConverter"/>
             <conv:FrenchDateConverter          x:Key="FrenchDateConverter"/>
             <conv:InverseBoolConverter         x:Key="InverseBoolConverter"/>
+            <conv:InverseBoolToVisibilityConverter x:Key="InverseBoolToVisibleConverter"/>
             <conv:SaleStatusColorConverter     x:Key="SaleStatusColorConverter"/>
 
             <!-- MVVM View-ViewModel Mappings -->
