@@ -57,7 +57,7 @@
                         <DataTemplate>
                             <Button Content="{Binding Name}"
                                     Style="{StaticResource BtnSecondary}"
-                                    Command="{Binding DataContext.FilterByCategoryCommand, RelativeSource={RelativeSource AncestorType=Window}}"
+                                    Command="{Binding DataContext.FilterByCategoryCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
                                     CommandParameter="{Binding Id}"
                                     Padding="14,7" FontSize="12" Margin="0,0,6,0"/>
                         </DataTemplate>
@@ -77,7 +77,7 @@
                         <DataTemplate>
                             <Button Style="{StaticResource BtnProductCard}"
                                     Width="150" Height="130" Margin="5"
-                                    Command="{Binding DataContext.AddProductToCartCommand, RelativeSource={RelativeSource AncestorType=Window}}"
+                                    Command="{Binding DataContext.AddProductToCartCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
                                     CommandParameter="{Binding}">
                                 <Grid Margin="0">
                                     <Grid.RowDefinitions>
@@ -196,7 +196,7 @@
                                                 Orientation="Horizontal" Margin="0,6,0,0">
                                         <Button Content="&#x2212;" Width="26" Height="26" FontSize="14"
                                                 Style="{StaticResource BtnSecondary}" Padding="0"
-                                                Command="{Binding DataContext.DecrementQuantityCommand, RelativeSource={RelativeSource AncestorType=Window}}"
+                                                Command="{Binding DataContext.DecrementQuantityCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
                                                 CommandParameter="{Binding}"/>
                                         <TextBlock Text="{Binding Quantity}"
                                                    FontSize="13" FontWeight="Bold"
@@ -206,7 +206,7 @@
                                                    Margin="6,0"/>
                                         <Button Content="+" Width="26" Height="26" FontSize="14"
                                                 Style="{StaticResource BtnSecondary}" Padding="0"
-                                                Command="{Binding DataContext.IncrementQuantityCommand, RelativeSource={RelativeSource AncestorType=Window}}"
+                                                Command="{Binding DataContext.IncrementQuantityCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
                                                 CommandParameter="{Binding}"/>
                                         <TextBlock Text="{Binding UnitPriceTTC, StringFormat='@ {0:N2} MAD'}"
                                                    Foreground="{StaticResource TextMutedBrush}" FontSize="11"
@@ -217,7 +217,7 @@
                                     <Button Grid.Row="1" Grid.Column="1"
                                             Content="&#x2715;" Width="24" Height="24"
                                             Style="{StaticResource BtnDanger}" Padding="0" FontSize="11"
-                                            Command="{Binding DataContext.RemoveItemCommand, RelativeSource={RelativeSource AncestorType=Window}}"
+                                            Command="{Binding DataContext.RemoveItemCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
                                             CommandParameter="{Binding}"
                                             VerticalAlignment="Bottom"/>
                                 </Grid>
@@ -266,6 +266,19 @@
                                    Visibility="{Binding PaymentError, Converter={StaticResource NullToCollapsedConverter}}"
                                    FontSize="12" TextWrapping="Wrap" Margin="0,0,0,10"/>
 
+                        <!-- Payment Method Selector -->
+                        <Label Content="MODE DE REGLEMENT" Style="{StaticResource FormLabel}"/>
+                        <Grid Margin="0,2,0,12">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <RadioButton Grid.Column="0" Content="ESPECES" IsChecked="{Binding SelectedPaymentMethod, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Cash}" GroupName="PayMethod" Margin="0,0,4,0"/>
+                            <RadioButton Grid.Column="1" Content="CARTE" IsChecked="{Binding SelectedPaymentMethod, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=CreditCard}" GroupName="PayMethod" Margin="2,0,2,0"/>
+                            <RadioButton Grid.Column="2" Content="CHEQUE" IsChecked="{Binding SelectedPaymentMethod, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Cheque}" GroupName="PayMethod" Margin="4,0,0,0"/>
+                        </Grid>
+
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
@@ -278,7 +291,6 @@
                             <Button Grid.Column="1" Content="&#x2713; VALIDER"
                                     Style="{StaticResource BtnPrimary}"
                                     Command="{Binding ProcessPaymentCommand}"
-                                    IsEnabled="{Binding CanPay}"
                                     Margin="4,0,0,0"/>
                         </Grid>
                     </StackPanel>
@@ -287,7 +299,7 @@
                 <!-- Normal totals bar (green bottom) -->
                 <Border Background="{StaticResource Go212GreenBrush}"
                         Padding="16"
-                        Visibility="{Binding IsPaymentPanelVisible, Converter={StaticResource InverseBoolConverter}}">
+                        Visibility="{Binding IsPaymentPanelVisible, Converter={StaticResource InverseBoolToVisibleConverter}}">
                     <StackPanel>
                         <!-- Subtotals -->
                         <Grid Margin="0,0,0,4">

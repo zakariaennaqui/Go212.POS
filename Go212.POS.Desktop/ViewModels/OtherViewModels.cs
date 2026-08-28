@@ -353,28 +353,91 @@ public partial class StockViewModel : ObservableObject
 public partial class ReportsViewModel : ObservableObject
 {
     private readonly IReportService _reportService;
-    public ReportsViewModel(IReportService reportService) => _reportService = reportService;
+    private readonly ILogger<ReportsViewModel> _logger;
+
+    public ReportsViewModel(IReportService reportService, ILogger<ReportsViewModel> logger)
+    {
+        _reportService = reportService;
+        _logger = logger;
+    }
 
     [ObservableProperty] private DateTime _selectedDate = DateTime.Today;
     [ObservableProperty] private Application.Interfaces.DailySalesReport? _dailyReport;
-    [ObservableProperty] private bool  _isLoading;
+    [ObservableProperty] private bool _isLoading;
+    [ObservableProperty] private string? _statusMessage;
 
     [RelayCommand]
-    private async Task LoadDailyReportAsync()
+    public async Task LoadDailyReportAsync()
     {
         IsLoading = true;
-        try { DailyReport = await _reportService.GetDailyReportAsync(SelectedDate); }
-        finally { IsLoading = false; }
+        StatusMessage = null;
+        try
+        {
+            DailyReport = await _reportService.GetDailyReportAsync(SelectedDate);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Failed to generate daily sales report");
+            StatusMessage = "Erreur lors de la génération du rapport.";
+        }
+        finally
+        {
+            IsLoading = false;
+        }
     }
 
     [RelayCommand]
     private async Task ExportPdfAsync()
     {
-        var pdf = await _reportService.ExportDailyReportPdfAsync(SelectedDate);
-        var path = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop),
-            $"rapport_{SelectedDate:yyyyMMdd}.pdf");
-        await System.IO.File.WriteAllBytesAsync(path, pdf);
-        System.Windows.MessageBox.Show($"Rapport exporté (format PDF):\n{path}");
+        try
+        {
+            var saveDlg = new SaveFileDialog
+            {
+                Title = "Exporter le Rapport Journalier (PDF)",
+                Filter = "PDF (*.pdf)|*.pdf",
+                FileName = $"rapport_journalier_{SelectedDate:yyyyMMdd}.pdf"
+            };
+
+            if (saveDlg.ShowDialog() != true) return;
+
+            var pdf = await _reportService.ExportDailyReportPdfAsync(SelectedDate);
+            await System.IO.File.WriteAllBytesAsync(saveDlg.FileName, pdf);
+            StatusMessage = $"✓ Rapport PDF exporté : {saveDlg.FileName}";
+            System.Windows.MessageBox.Show($"Rapport PDF exporté avec succès :\n{saveDlg.FileName}", "Export PDF", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Information);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Failed to export PDF report");
+            StatusMessage = "Erreur lors de l'export PDF.";
+            System.Windows.MessageBox.Show($"Erreur lors de l'export PDF : {ex.Message}", "Erreur", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
+        }
+    }
+
+    [RelayCommand]
+    private async Task ExportCsvAsync()
+    {
+        try
+        {
+            var saveDlg = new SaveFileDialog
+            {
+                Title = "Exporter le Rapport Journalier (CSV)",
+                Filter = "CSV (*.csv)|*.csv",
+                FileName = $"rapport_journalier_{SelectedDate:yyyyMMdd}.csv"
+            };
+
+            if (saveDlg.ShowDialog() != true) return;
+
+            var csv = await _reportService.ExportDailyReportCsvAsync(SelectedDate);
+            await System.IO.File.WriteAllBytesAsync(saveDlg.FileName, csv);
+            StatusMessage = $"✓ Rapport CSV exporté : {saveDlg.FileName}";
+            System.Windows.MessageBox.Show($"Rapport CSV exporté avec succès :\n{saveDlg.FileName}", "Export CSV", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Information);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Failed to export CSV report");
+            StatusMessage = "Erreur lors de l'export CSV.";
+            System.Windows.MessageBox.Show($"Erreur lors de l'export CSV : {ex.Message}", "Erreur", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
+        }
     }
 }
 

@@ -20,7 +20,7 @@
         </Grid.ColumnDefinitions>
 
         <!-- LEFT — Branding panel (GO212 green) -->
-        <Border Grid.Column="0" Background="{StaticResource Go212GreenBrush}">
+        <Border x:Name="BrandPanel" Grid.Column="0" Background="{StaticResource Go212GreenBrush}">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
@@ -130,7 +130,6 @@
                     <!-- Login button -->
                     <Button Content="SE CONNECTER" Style="{StaticResource BtnPrimary}"
                             Command="{Binding LoginCommand}"
-                            IsEnabled="{Binding CanLogin}"
                             HorizontalAlignment="Stretch"
                             Height="48" FontSize="15"/>
 

@@ -14,8 +14,11 @@ public partial class LoginWindow : Window
         _vm = viewModel;
         DataContext = _vm;
 
-        // Allow window dragging on dark left panel
-        MouseLeftButtonDown += (s, e) => DragMove();
+        // Allow window dragging ONLY on the left branding panel
+        if (FindName("BrandPanel") is FrameworkElement brandPanel)
+        {
+            brandPanel.MouseLeftButtonDown += (s, e) => { if (e.ButtonState == MouseButtonState.Pressed) DragMove(); };
+        }
 
         Loaded += async (s, e) => await _vm.LoadUsersAsync();
     }

@@ -68,7 +68,7 @@
                                    Visibility="{Binding HasOpenSession, Converter={StaticResource BoolToVisibleConverter}}"/>
                         <TextBlock Text="Caisse Fermee" FontSize="18" FontWeight="Bold"
                                    Foreground="{StaticResource DangerBrush}" Margin="0,6,0,0"
-                                   Visibility="{Binding HasOpenSession, Converter={StaticResource InverseBoolConverter}}"/>
+                                   Visibility="{Binding HasOpenSession, Converter={StaticResource InverseBoolToVisibleConverter}}"/>
                     </StackPanel>
                 </Border>
             </Grid>

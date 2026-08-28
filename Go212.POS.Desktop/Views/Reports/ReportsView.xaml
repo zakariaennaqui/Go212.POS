@@ -15,7 +15,7 @@
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Column="0">
                     <TextBlock Text="Rapports &amp; Statistiques" Style="{StaticResource Heading1}"/>
-                    <TextBlock Text="Rapport journalier (Z-Report) et recapitulatif des encaissements"
+                    <TextBlock Text="Rapport journalier (Z-Report) et récapitulatif des encaissements"
                                Style="{StaticResource TextSecondary}" Margin="0,2,0,0"/>
                 </StackPanel>
                 <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
@@ -24,17 +24,33 @@
                             Margin="0,0,8,0">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="&#xE72C;" FontFamily="Segoe MDL2 Assets" FontSize="12" Margin="0,0,5,0"/>
-                            <TextBlock Text="Generer Rapport"/>
+                            <TextBlock Text="Générer Rapport"/>
                         </StackPanel>
                     </Button>
-                    <Button Style="{StaticResource BtnSecondary}" Command="{Binding ExportPdfCommand}">
+                    <Button Style="{StaticResource BtnSecondary}" Command="{Binding ExportPdfCommand}" Margin="0,0,8,0">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="&#xEDE3;" FontFamily="Segoe MDL2 Assets" FontSize="12" Margin="0,0,5,0"/>
                             <TextBlock Text="Exporter PDF"/>
                         </StackPanel>
                     </Button>
+                    <Button Style="{StaticResource BtnSecondary}" Command="{Binding ExportCsvCommand}">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="&#xE8B9;" FontFamily="Segoe MDL2 Assets" FontSize="12" Margin="0,0,5,0"/>
+                            <TextBlock Text="Exporter CSV"/>
+                        </StackPanel>
+                    </Button>
                 </StackPanel>
             </Grid>
+
+            <!-- Status Banner -->
+            <Border Background="#FFDCFCE7"
+                    BorderBrush="{StaticResource SuccessBrush}"
+                    BorderThickness="0"
+                    Padding="12,8" Margin="0,0,0,16"
+                    Visibility="{Binding StatusMessage, Converter={StaticResource NullToCollapsedConverter}}">
+                <TextBlock Text="{Binding StatusMessage}"
+                           Foreground="{StaticResource SuccessBrush}" FontSize="13"/>
+            </Border>
 
             <!-- KPI Cards -->
             <Grid Margin="0,0,0,20">
@@ -42,47 +58,97 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <Border Grid.Column="0" Style="{StaticResource CardPanel}" Margin="0,0,10,0">
+                <Border Grid.Column="0" Style="{StaticResource CardPanel}" Margin="0,0,8,0">
                     <StackPanel>
                         <TextBlock Text="TOTAL TTC" Style="{StaticResource FormLabelText}"/>
                         <TextBlock Text="{Binding DailyReport.TotalTTC, StringFormat='{}{0:N2} MAD'}"
-                                   FontSize="24" FontWeight="Bold"
+                                   FontSize="22" FontWeight="Bold"
                                    Foreground="{StaticResource Go212GreenBrush}" Margin="0,8,0,0"/>
                     </StackPanel>
                 </Border>
 
-                <Border Grid.Column="1" Style="{StaticResource CardPanel}" Margin="5,0,5,0">
+                <Border Grid.Column="1" Style="{StaticResource CardPanel}" Margin="4,0,4,0">
                     <StackPanel>
                         <TextBlock Text="SOUS-TOTAL HT" Style="{StaticResource FormLabelText}"/>
                         <TextBlock Text="{Binding DailyReport.TotalHT, StringFormat='{}{0:N2} MAD'}"
-                                   FontSize="24" FontWeight="Bold"
+                                   FontSize="22" FontWeight="Bold"
                                    Foreground="{StaticResource InfoBrush}" Margin="0,8,0,0"/>
                     </StackPanel>
                 </Border>
 
-                <Border Grid.Column="2" Style="{StaticResource CardPanel}" Margin="10,0,0,0">
+                <Border Grid.Column="2" Style="{StaticResource CardPanel}" Margin="4,0,4,0">
                     <StackPanel>
-                        <TextBlock Text="TOTAL TVA COLLECTEE" Style="{StaticResource FormLabelText}"/>
+                        <TextBlock Text="TOTAL TVA COLLECTÉE" Style="{StaticResource FormLabelText}"/>
                         <TextBlock Text="{Binding DailyReport.TotalTax, StringFormat='{}{0:N2} MAD'}"
-                                   FontSize="24" FontWeight="Bold"
+                                   FontSize="22" FontWeight="Bold"
                                    Foreground="{StaticResource WarningBrush}" Margin="0,8,0,0"/>
+                    </StackPanel>
+                </Border>
+
+                <Border Grid.Column="3" Style="{StaticResource CardPanel}" Margin="8,0,0,0">
+                    <StackPanel>
+                        <TextBlock Text="NB DE VENTES" Style="{StaticResource FormLabelText}"/>
+                        <TextBlock Text="{Binding DailyReport.SaleCount}"
+                                   FontSize="22" FontWeight="Bold"
+                                   Foreground="{StaticResource TextPrimaryBrush}" Margin="0,8,0,0"/>
                     </StackPanel>
                 </Border>
             </Grid>
 
-            <!-- Sales by payment method -->
-            <TextBlock Text="Encaissements par Mode de Paiement"
-                       Style="{StaticResource Heading2}" Margin="0,0,0,10"/>
-            <DataGrid ItemsSource="{Binding DailyReport.PaymentBreakdown}"
-                      AutoGenerateColumns="False" IsReadOnly="True"
-                      Style="{StaticResource PosDataGrid}">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="MODE DE PAIEMENT"  Binding="{Binding Method}" Width="*"/>
-                    <DataGridTextColumn Header="MONTANT ENCAISSE"  Binding="{Binding TotalAmount, StringFormat='{}{0:N2} MAD'}" Width="200"/>
-                </DataGrid.Columns>
-            </DataGrid>
+            <!-- 2-Column Grid: Left: Payment & Hourly, Right: Top Products -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="16"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Left Column -->
+                <StackPanel Grid.Column="0">
+                    <!-- Sales by payment method -->
+                    <TextBlock Text="Encaissements par Mode de Paiement"
+                               Style="{StaticResource Heading2}" Margin="0,0,0,10"/>
+                    <DataGrid ItemsSource="{Binding DailyReport.PaymentBreakdown}"
+                              AutoGenerateColumns="False" IsReadOnly="True"
+                              Style="{StaticResource PosDataGrid}" Margin="0,0,0,20">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="MODE DE PAIEMENT"  Binding="{Binding Method}" Width="*"/>
+                            <DataGridTextColumn Header="MONTANT ENCAISSÉ"  Binding="{Binding TotalAmount, StringFormat='{}{0:N2} MAD'}" Width="160"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                    <!-- Hourly Sales -->
+                    <TextBlock Text="Ventes par Heure"
+                               Style="{StaticResource Heading2}" Margin="0,0,0,10"/>
+                    <DataGrid ItemsSource="{Binding DailyReport.HourlySales}"
+                              AutoGenerateColumns="False" IsReadOnly="True"
+                              Style="{StaticResource PosDataGrid}">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="CRÉNEAU" Binding="{Binding Hour, StringFormat='{}{0:D2}:00 - {0:D2}:59'}" Width="130"/>
+                            <DataGridTextColumn Header="TICKETS" Binding="{Binding Count}" Width="80"/>
+                            <DataGridTextColumn Header="MONTANT" Binding="{Binding Amount, StringFormat='{}{0:N2} MAD'}" Width="*"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+
+                <!-- Right Column: Top Products -->
+                <StackPanel Grid.Column="2">
+                    <TextBlock Text="Top 10 Produits Vendus"
+                               Style="{StaticResource Heading2}" Margin="0,0,0,10"/>
+                    <DataGrid ItemsSource="{Binding DailyReport.TopProducts}"
+                              AutoGenerateColumns="False" IsReadOnly="True"
+                              Style="{StaticResource PosDataGrid}">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="PRODUIT" Binding="{Binding Name}" Width="*"/>
+                            <DataGridTextColumn Header="QTÉ"     Binding="{Binding QuantitySold}" Width="70"/>
+                            <DataGridTextColumn Header="REVENU"  Binding="{Binding Revenue, StringFormat='{}{0:N2} MAD'}" Width="140"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+            </Grid>
         </StackPanel>
     </ScrollViewer>
 </UserControl>

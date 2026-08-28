@@ -79,6 +79,25 @@ public class FrenchDateConverter : IValueConverter
         => throw new NotImplementedException();
 }
 
+/// <summary>Maps enum value to boolean for RadioButton IsChecked binding.</summary>
+public class EnumToBooleanConverter : IValueConverter
+{
+    public object Convert(object? value, Type targetType, object parameter, CultureInfo culture)
+    {
+        if (value is null || parameter is null) return false;
+        return value.ToString()!.Equals(parameter.ToString(), StringComparison.OrdinalIgnoreCase);
+    }
+
+    public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+    {
+        if (value is true && parameter is string paramString)
+        {
+            return Enum.Parse(targetType, paramString);
+        }
+        return Binding.DoNothing;
+    }
+}
+
 /// <summary>Maps SaleStatus enum to a color brush name for status badges.</summary>
 public class SaleStatusColorConverter : IValueConverter
 {
@@ -101,3 +120,4 @@ public class SaleStatusColorConverter : IValueConverter
     public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         => throw new NotImplementedException();
 }
+

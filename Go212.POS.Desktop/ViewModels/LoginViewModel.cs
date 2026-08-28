@@ -35,10 +35,12 @@ public partial class LoginViewModel : ObservableObject
     private ObservableCollection<User> _users = [];
 
     [ObservableProperty]
+    [NotifyPropertyChangedFor(nameof(CanLogin))]
     [NotifyCanExecuteChangedFor(nameof(LoginCommand))]
     private User? _selectedUser;
 
     [ObservableProperty]
+    [NotifyPropertyChangedFor(nameof(CanLogin))]
     [NotifyCanExecuteChangedFor(nameof(LoginCommand))]
     private string _pin = string.Empty;
 
@@ -49,6 +51,8 @@ public partial class LoginViewModel : ObservableObject
     private string? _lockMessage;
 
     [ObservableProperty]
+    [NotifyPropertyChangedFor(nameof(CanLogin))]
+    [NotifyCanExecuteChangedFor(nameof(LoginCommand))]
     private bool _isLoading;
 
     public bool CanLogin => SelectedUser is not null && Pin.Length >= 4 && !IsLoading;

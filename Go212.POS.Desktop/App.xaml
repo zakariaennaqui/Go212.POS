@@ -30,6 +30,7 @@
             <conv:InverseBoolConverter         x:Key="InverseBoolConverter"/>
             <conv:InverseBoolToVisibilityConverter x:Key="InverseBoolToVisibleConverter"/>
             <conv:SaleStatusColorConverter     x:Key="SaleStatusColorConverter"/>
+            <conv:EnumToBooleanConverter       x:Key="EnumToBooleanConverter"/>
 
             <!-- MVVM View-ViewModel Mappings -->
             <DataTemplate DataType="{x:Type vm:HomeViewModel}">
