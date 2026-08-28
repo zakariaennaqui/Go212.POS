@@ -1,0 +1,929 @@
+Folder PATH listing for volume Windows
+Volume serial number is 0000006A EE13:9BFE
+C:.
+¦   .gitignore
+¦   global.json
+¦   Go212.POS.sln
+¦   package-lock.json
+¦   README.md
+¦   
++---Go212.POS.Application
+¦   ¦   ApplicationExtensions.cs
+¦   ¦   Go212.POS.Application.csproj
+¦   ¦   
+¦   +---bin
+¦   ¦   +---Debug
+¦   ¦       +---net10.0
+¦   ¦           ¦   Go212.POS.Application.deps.json
+¦   ¦           ¦   Go212.POS.Application.dll
+¦   ¦           ¦   Go212.POS.Application.pdb
+¦   ¦           ¦   Go212.POS.Domain.dll
+¦   ¦           ¦   Go212.POS.Domain.pdb
+¦   ¦           ¦   
+¦   ¦           +---LatoFont
+¦   ¦                   Lato-Black.ttf
+¦   ¦                   Lato-BlackItalic.ttf
+¦   ¦                   Lato-Bold.ttf
+¦   ¦                   Lato-BoldItalic.ttf
+¦   ¦                   Lato-ExtraBold.ttf
+¦   ¦                   Lato-ExtraBoldItalic.ttf
+¦   ¦                   Lato-ExtraLight.ttf
+¦   ¦                   Lato-ExtraLightItalic.ttf
+¦   ¦                   Lato-Italic.ttf
+¦   ¦                   Lato-Light.ttf
+¦   ¦                   Lato-LightItalic.ttf
+¦   ¦                   Lato-Medium.ttf
+¦   ¦                   Lato-MediumItalic.ttf
+¦   ¦                   Lato-Regular.ttf
+¦   ¦                   Lato-SemiBold.ttf
+¦   ¦                   Lato-SemiBoldItalic.ttf
+¦   ¦                   Lato-Thin.ttf
+¦   ¦                   Lato-ThinItalic.ttf
+¦   ¦                   OFL.txt
+¦   ¦                   
+¦   +---Commands
+¦   ¦       Commands.cs
+¦   ¦       
+¦   +---DTOs
+¦   +---Exceptions
+¦   +---Helpers
+¦   ¦       RawPrinterHelper.cs
+¦   ¦       
+¦   +---Interfaces
+¦   ¦       IServices.cs
+¦   ¦       
+¦   +---obj
+¦   ¦   ¦   Go212.POS.Application.csproj.nuget.dgspec.json
+¦   ¦   ¦   Go212.POS.Application.csproj.nuget.g.props
+¦   ¦   ¦   Go212.POS.Application.csproj.nuget.g.targets
+¦   ¦   ¦   project.assets.json
+¦   ¦   ¦   project.nuget.cache
+¦   ¦   ¦   
+¦   ¦   +---Debug
+¦   ¦       +---net10.0
+¦   ¦           ¦   .NETCoreApp,Version=v10.0.AssemblyAttributes.cs
+¦   ¦           ¦   Go212.PO.2AF5E4F4.Up2Date
+¦   ¦           ¦   Go212.POS.Application.AssemblyInfo.cs
+¦   ¦           ¦   Go212.POS.Application.AssemblyInfoInputs.cache
+¦   ¦           ¦   Go212.POS.Application.assets.cache
+¦   ¦           ¦   Go212.POS.Application.csproj.AssemblyReference.cache
+¦   ¦           ¦   Go212.POS.Application.csproj.CoreCompileInputs.cache
+¦   ¦           ¦   Go212.POS.Application.csproj.FileListAbsolute.txt
+¦   ¦           ¦   Go212.POS.Application.dll
+¦   ¦           ¦   Go212.POS.Application.GeneratedMSBuildEditorConfig.editorconfig
+¦   ¦           ¦   Go212.POS.Application.GlobalUsings.g.cs
+¦   ¦           ¦   Go212.POS.Application.pdb
+¦   ¦           ¦   Go212.POS.Application.sourcelink.json
+¦   ¦           ¦   
+¦   ¦           +---ref
+¦   ¦           ¦       Go212.POS.Application.dll
+¦   ¦           ¦       
+¦   ¦           +---refint
+¦   ¦                   Go212.POS.Application.dll
+¦   ¦                   
+¦   +---Queries
+¦   +---Services
+¦   ¦       AuthService.cs
+¦   ¦       CurrentUserService.cs
+¦   ¦       OtherServices.cs
+¦   ¦       ReceiptService.cs
+¦   ¦       SaleService.cs
+¦   ¦       
+¦   +---Validators
++---Go212.POS.Desktop
+¦   ¦   App.xaml
+¦   ¦   App.xaml.cs
+¦   ¦   appsettings.json
+¦   ¦   appsettings.local.json
+¦   ¦   DesktopExtensions.cs
+¦   ¦   Go212.POS.Desktop.csproj
+¦   ¦   NavigationService.cs
+¦   ¦   
+¦   +---Assets
+¦   ¦   +---Images
+¦   +---bin
+¦   ¦   +---Debug
+¦   ¦       +---net10.0-windows
+¦   ¦           ¦   appsettings.json
+¦   ¦           ¦   appsettings.local.json
+¦   ¦           ¦   BCrypt.Net-Next.dll
+¦   ¦           ¦   CommunityToolkit.Mvvm.dll
+¦   ¦           ¦   Dapper.dll
+¦   ¦           ¦   FluentValidation.dll
+¦   ¦           ¦   Go212.POS.Application.dll
+¦   ¦           ¦   Go212.POS.Application.pdb
+¦   ¦           ¦   Go212.POS.deps.json
+¦   ¦           ¦   Go212.POS.dll
+¦   ¦           ¦   Go212.POS.Domain.dll
+¦   ¦           ¦   Go212.POS.Domain.pdb
+¦   ¦           ¦   Go212.POS.exe
+¦   ¦           ¦   Go212.POS.Infrastructure.dll
+¦   ¦           ¦   Go212.POS.Infrastructure.pdb
+¦   ¦           ¦   Go212.POS.pdb
+¦   ¦           ¦   Go212.POS.runtimeconfig.json
+¦   ¦           ¦   Microsoft.Extensions.Configuration.Abstractions.dll
+¦   ¦           ¦   Microsoft.Extensions.Configuration.dll
+¦   ¦           ¦   Microsoft.Extensions.Configuration.FileExtensions.dll
+¦   ¦           ¦   Microsoft.Extensions.Configuration.Json.dll
+¦   ¦           ¦   Microsoft.Extensions.DependencyInjection.Abstractions.dll
+¦   ¦           ¦   Microsoft.Extensions.DependencyInjection.dll
+¦   ¦           ¦   Microsoft.Extensions.FileProviders.Abstractions.dll
+¦   ¦           ¦   Microsoft.Extensions.FileProviders.Physical.dll
+¦   ¦           ¦   Microsoft.Extensions.FileSystemGlobbing.dll
+¦   ¦           ¦   Microsoft.Extensions.Logging.Abstractions.dll
+¦   ¦           ¦   Microsoft.Extensions.Logging.dll
+¦   ¦           ¦   Microsoft.Extensions.Options.dll
+¦   ¦           ¦   Microsoft.Extensions.Primitives.dll
+¦   ¦           ¦   MySqlConnector.dll
+¦   ¦           ¦   QuestPDF.dll
+¦   ¦           ¦   Serilog.dll
+¦   ¦           ¦   Serilog.Extensions.Logging.dll
+¦   ¦           ¦   Serilog.Sinks.File.dll
+¦   ¦           ¦   SixLabors.ImageSharp.dll
+¦   ¦           ¦   
+¦   ¦           +---images
+¦   ¦           ¦       003947be723b4d528eec26ee4898325e.jpg
+¦   ¦           ¦       ba9f862ccdbe4aac8e2232ceb92b43b6.jpg
+¦   ¦           ¦       c9e42aa158f64b0ab410162dc08eb950.jpg
+¦   ¦           ¦       dc893dd6e39142a98b4d98261719390f.jpg
+¦   ¦           ¦       
+¦   ¦           +---LatoFont
+¦   ¦           ¦       Lato-Black.ttf
+¦   ¦           ¦       Lato-BlackItalic.ttf
+¦   ¦           ¦       Lato-Bold.ttf
+¦   ¦           ¦       Lato-BoldItalic.ttf
+¦   ¦           ¦       Lato-ExtraBold.ttf
+¦   ¦           ¦       Lato-ExtraBoldItalic.ttf
+¦   ¦           ¦       Lato-ExtraLight.ttf
+¦   ¦           ¦       Lato-ExtraLightItalic.ttf
+¦   ¦           ¦       Lato-Italic.ttf
+¦   ¦           ¦       Lato-Light.ttf
+¦   ¦           ¦       Lato-LightItalic.ttf
+¦   ¦           ¦       Lato-Medium.ttf
+¦   ¦           ¦       Lato-MediumItalic.ttf
+¦   ¦           ¦       Lato-Regular.ttf
+¦   ¦           ¦       Lato-SemiBold.ttf
+¦   ¦           ¦       Lato-SemiBoldItalic.ttf
+¦   ¦           ¦       Lato-Thin.ttf
+¦   ¦           ¦       Lato-ThinItalic.ttf
+¦   ¦           ¦       OFL.txt
+¦   ¦           ¦       
+¦   ¦           +---logs
+¦   ¦           ¦       go212-pos-20260824.log
+¦   ¦           ¦       go212-pos-20260824_001.log
+¦   ¦           ¦       go212-pos-20260824_002.log
+¦   ¦           ¦       go212-pos-20260824_003.log
+¦   ¦           ¦       go212-pos-20260825.log
+¦   ¦           ¦       go212-pos-20260828.log
+¦   ¦           ¦       go212-pos-20260828_001.log
+¦   ¦           ¦       
+¦   ¦           +---runtimes
+¦   ¦               +---linux-arm64
+¦   ¦               ¦   +---native
+¦   ¦               ¦           libcrypto.so
+¦   ¦               ¦           libjpeg.so.8
+¦   ¦               ¦           libqpdf.so
+¦   ¦               ¦           libQuestPdfSkia.so
+¦   ¦               ¦           
+¦   ¦               +---linux-musl-x64
+¦   ¦               ¦   +---native
+¦   ¦               ¦           libcrypto.so
+¦   ¦               ¦           libjpeg.so.8
+¦   ¦               ¦           libqpdf.so
+¦   ¦               ¦           libQuestPdfSkia.so
+¦   ¦               ¦           
+¦   ¦               +---linux-x64
+¦   ¦               ¦   +---native
+¦   ¦               ¦           libcrypto.so
+¦   ¦               ¦           libjpeg.so.8
+¦   ¦               ¦           libqpdf.so
+¦   ¦               ¦           libQuestPdfSkia.so
+¦   ¦               ¦           
+¦   ¦               +---osx-arm64
+¦   ¦               ¦   +---native
+¦   ¦               ¦           libcrypto.dylib
+¦   ¦               ¦           libjpeg.dylib
+¦   ¦               ¦           libqpdf.dylib
+¦   ¦               ¦           libQuestPdfSkia.dylib
+¦   ¦               ¦           
+¦   ¦               +---osx-x64
+¦   ¦               ¦   +---native
+¦   ¦               ¦           libcrypto.dylib
+¦   ¦               ¦           libjpeg.dylib
+¦   ¦               ¦           libqpdf.dylib
+¦   ¦               ¦           libQuestPdfSkia.dylib
+¦   ¦               ¦           
+¦   ¦               +---win-x64
+¦   ¦               ¦   +---native
+¦   ¦               ¦           libgcc_s_seh-1.dll
+¦   ¦               ¦           libstdc++-6.dll
+¦   ¦               ¦           libwinpthread-1.dll
+¦   ¦               ¦           qpdf.dll
+¦   ¦               ¦           QuestPdfSkia.dll
+¦   ¦               ¦           
+¦   ¦               +---win-x86
+¦   ¦                   +---native
+¦   ¦                           libgcc_s_dw2-1.dll
+¦   ¦                           libstdc++-6.dll
+¦   ¦                           libwinpthread-1.dll
+¦   ¦                           qpdf.dll
+¦   ¦                           QuestPdfSkia.dll
+¦   ¦                           
+¦   +---Controls
+¦   +---Converters
+¦   ¦       Converters.cs
+¦   ¦       
+¦   +---obj
+¦   ¦   ¦   Go212.POS.Desktop.csproj.nuget.dgspec.json
+¦   ¦   ¦   Go212.POS.Desktop.csproj.nuget.g.props
+¦   ¦   ¦   Go212.POS.Desktop.csproj.nuget.g.targets
+¦   ¦   ¦   Go212.POS.Desktop_15mlcruh_wpftmp.csproj.nuget.dgspec.json
+¦   ¦   ¦   Go212.POS.Desktop_15mlcruh_wpftmp.csproj.nuget.g.props
+¦   ¦   ¦   Go212.POS.Desktop_15mlcruh_wpftmp.csproj.nuget.g.targets
+¦   ¦   ¦   Go212.POS.Desktop_1rsgdg1y_wpftmp.csproj.nuget.dgspec.json
+¦   ¦   ¦   Go212.POS.Desktop_1rsgdg1y_wpftmp.csproj.nuget.g.props
+¦   ¦   ¦   Go212.POS.Desktop_1rsgdg1y_wpftmp.csproj.nuget.g.targets
+¦   ¦   ¦   Go212.POS.Desktop_sa50uj0s_wpftmp.csproj.nuget.dgspec.json
+¦   ¦   ¦   Go212.POS.Desktop_sa50uj0s_wpftmp.csproj.nuget.g.props
+¦   ¦   ¦   Go212.POS.Desktop_sa50uj0s_wpftmp.csproj.nuget.g.targets
+¦   ¦   ¦   Go212.POS.Desktop_timjln3k_wpftmp.csproj.nuget.dgspec.json
+¦   ¦   ¦   Go212.POS.Desktop_timjln3k_wpftmp.csproj.nuget.g.props
+¦   ¦   ¦   Go212.POS.Desktop_timjln3k_wpftmp.csproj.nuget.g.targets
+¦   ¦   ¦   Go212.POS.Desktop_vah4fwx5_wpftmp.csproj.nuget.dgspec.json
+¦   ¦   ¦   Go212.POS.Desktop_vah4fwx5_wpftmp.csproj.nuget.g.props
+¦   ¦   ¦   Go212.POS.Desktop_vah4fwx5_wpftmp.csproj.nuget.g.targets
+¦   ¦   ¦   Go212.POS.Desktop_ydwqyz22_wpftmp.csproj.nuget.dgspec.json
+¦   ¦   ¦   Go212.POS.Desktop_ydwqyz22_wpftmp.csproj.nuget.g.props
+¦   ¦   ¦   Go212.POS.Desktop_ydwqyz22_wpftmp.csproj.nuget.g.targets
+¦   ¦   ¦   Go212.POS.Desktop_yy2ndakh_wpftmp.csproj.nuget.dgspec.json
+¦   ¦   ¦   Go212.POS.Desktop_yy2ndakh_wpftmp.csproj.nuget.g.props
+¦   ¦   ¦   Go212.POS.Desktop_yy2ndakh_wpftmp.csproj.nuget.g.targets
+¦   ¦   ¦   project.assets.json
+¦   ¦   ¦   project.nuget.cache
+¦   ¦   ¦   
+¦   ¦   +---Debug
+¦   ¦       +---net10.0-windows
+¦   ¦           ¦   .NETCoreApp,Version=v10.0.AssemblyAttributes.cs
+¦   ¦           ¦   App.baml
+¦   ¦           ¦   App.g.cs
+¦   ¦           ¦   apphost.exe
+¦   ¦           ¦   GeneratedInternalTypeHelper.g.cs
+¦   ¦           ¦   Go212.PO.5D856184.Up2Date
+¦   ¦           ¦   Go212.POS.Desktop.AssemblyInfo.cs
+¦   ¦           ¦   Go212.POS.Desktop.AssemblyInfoInputs.cache
+¦   ¦           ¦   Go212.POS.Desktop.assets.cache
+¦   ¦           ¦   Go212.POS.Desktop.csproj.AssemblyReference.cache
+¦   ¦           ¦   Go212.POS.Desktop.csproj.CoreCompileInputs.cache
+¦   ¦           ¦   Go212.POS.Desktop.csproj.FileListAbsolute.txt
+¦   ¦           ¦   Go212.POS.Desktop.GeneratedMSBuildEditorConfig.editorconfig
+¦   ¦           ¦   Go212.POS.Desktop.genruntimeconfig.cache
+¦   ¦           ¦   Go212.POS.Desktop.GlobalUsings.g.cs
+¦   ¦           ¦   Go212.POS.Desktop.sourcelink.json
+¦   ¦           ¦   Go212.POS.Desktop_15mlcruh_wpftmp.AssemblyInfo.cs
+¦   ¦           ¦   Go212.POS.Desktop_15mlcruh_wpftmp.AssemblyInfoInputs.cache
+¦   ¦           ¦   Go212.POS.Desktop_15mlcruh_wpftmp.assets.cache
+¦   ¦           ¦   Go212.POS.Desktop_15mlcruh_wpftmp.GeneratedMSBuildEditorConfig.editorconfig
+¦   ¦           ¦   Go212.POS.Desktop_15mlcruh_wpftmp.GlobalUsings.g.cs
+¦   ¦           ¦   Go212.POS.Desktop_1ipi5sno_wpftmp.AssemblyInfo.cs
+¦   ¦           ¦   Go212.POS.Desktop_1ipi5sno_wpftmp.AssemblyInfoInputs.cache
+¦   ¦           ¦   Go212.POS.Desktop_1ipi5sno_wpftmp.assets.cache
+¦   ¦           ¦   Go212.POS.Desktop_1ipi5sno_wpftmp.GeneratedMSBuildEditorConfig.editorconfig
+¦   ¦           ¦   Go212.POS.Desktop_1ipi5sno_wpftmp.GlobalUsings.g.cs
+¦   ¦           ¦   Go212.POS.Desktop_1ndf5i50_wpftmp.AssemblyInfo.cs
+¦   ¦           ¦   Go212.POS.Desktop_1ndf5i50_wpftmp.AssemblyInfoInputs.cache
+¦   ¦           ¦   Go212.POS.Desktop_1ndf5i50_wpftmp.assets.cache
+¦   ¦           ¦   Go212.POS.Desktop_1ndf5i50_wpftmp.GeneratedMSBuildEditorConfig.editorconfig
+¦   ¦           ¦   Go212.POS.Desktop_1ndf5i50_wpftmp.GlobalUsings.g.cs
+¦   ¦           ¦   Go212.POS.Desktop_1rsgdg1y_wpftmp.AssemblyInfo.cs
+¦   ¦           ¦   Go212.POS.Desktop_1rsgdg1y_wpftmp.AssemblyInfoInputs.cache
+¦   ¦           ¦   Go212.POS.Desktop_1rsgdg1y_wpftmp.assets.cache
+¦   ¦           ¦   Go212.POS.Desktop_1rsgdg1y_wpftmp.GeneratedMSBuildEditorConfig.editorconfig
+¦   ¦           ¦   Go212.POS.Desktop_1rsgdg1y_wpftmp.GlobalUsings.g.cs
+¦   ¦           ¦   Go212.POS.Desktop_2tj4s0ff_wpftmp.AssemblyInfo.cs
+¦   ¦           ¦   Go212.POS.Desktop_2tj4s0ff_wpftmp.AssemblyInfoInputs.cache
+¦   ¦           ¦   Go212.POS.Desktop_2tj4s0ff_wpftmp.assets.cache
+¦   ¦           ¦   Go212.POS.Desktop_2tj4s0ff_wpftmp.GeneratedMSBuildEditorConfig.editorconfig
+¦   ¦           ¦   Go212.POS.Desktop_2tj4s0ff_wpftmp.GlobalUsings.g.cs
+¦   ¦           ¦   Go212.POS.Desktop_2ze2fpbg_wpftmp.AssemblyInfo.cs
+¦   ¦           ¦   Go212.POS.Desktop_2ze2fpbg_wpftmp.AssemblyInfoInputs.cache
+¦   ¦           ¦   Go212.POS.Desktop_2ze2fpbg_wpftmp.assets.cache
+¦   ¦           ¦   Go212.POS.Desktop_2ze2fpbg_wpftmp.GeneratedMSBuildEditorConfig.editorconfig
+¦   ¦           ¦   Go212.POS.Desktop_2ze2fpbg_wpftmp.GlobalUsings.g.cs
+¦   ¦           ¦   Go212.POS.Desktop_40ses30m_wpftmp.AssemblyInfo.cs
+¦   ¦           ¦   Go212.POS.Desktop_40ses30m_wpftmp.AssemblyInfoInputs.cache
+¦   ¦           ¦   Go212.POS.Desktop_40ses30m_wpftmp.assets.cache
+¦   ¦           ¦   Go212.POS.Desktop_40ses30m_wpftmp.GeneratedMSBuildEditorConfig.editorconfig
+¦   ¦           ¦   Go212.POS.Desktop_40ses30m_wpftmp.GlobalUsings.g.cs
+¦   ¦           ¦   Go212.POS.Desktop_4kb53cat_wpftmp.AssemblyInfo.cs
+¦   ¦           ¦   Go212.POS.Desktop_4kb53cat_wpftmp.AssemblyInfoInputs.cache
+¦   ¦           ¦   Go212.POS.Desktop_4kb53cat_wpftmp.assets.cache
+¦   ¦           ¦   Go212.POS.Desktop_4kb53cat_wpftmp.GeneratedMSBuildEditorConfig.editorconfig
+¦   ¦           ¦   Go212.POS.Desktop_4kb53cat_wpftmp.GlobalUsings.g.cs
+¦   ¦           ¦   Go212.POS.Desktop_4tfdgfsk_wpftmp.AssemblyInfo.cs
+¦   ¦           ¦   Go212.POS.Desktop_4tfdgfsk_wpftmp.AssemblyInfoInputs.cache
+¦   ¦           ¦   Go212.POS.Desktop_4tfdgfsk_wpftmp.assets.cache
+¦   ¦           ¦   Go212.POS.Desktop_4tfdgfsk_wpftmp.GeneratedMSBuildEditorConfig.editorconfig
+¦   ¦           ¦   Go212.POS.Desktop_4tfdgfsk_wpftmp.GlobalUsings.g.cs
+¦   ¦           ¦   Go212.POS.Desktop_5t1ezlbq_wpftmp.AssemblyInfo.cs
+¦   ¦           ¦   Go212.POS.Desktop_5t1ezlbq_wpftmp.AssemblyInfoInputs.cache
+¦   ¦           ¦   Go212.POS.Desktop_5t1ezlbq_wpftmp.assets.cache
+¦   ¦           ¦   Go212.POS.Desktop_5t1ezlbq_wpftmp.GeneratedMSBuildEditorConfig.editorconfig
+¦   ¦           ¦   Go212.POS.Desktop_5t1ezlbq_wpftmp.GlobalUsings.g.cs
+¦   ¦           ¦   Go212.POS.Desktop_afxslb4f_wpftmp.AssemblyInfo.cs
+¦   ¦           ¦   Go212.POS.Desktop_afxslb4f_wpftmp.AssemblyInfoInputs.cache
+¦   ¦           ¦   Go212.POS.Desktop_afxslb4f_wpftmp.assets.cache
+¦   ¦           ¦   Go212.POS.Desktop_afxslb4f_wpftmp.GeneratedMSBuildEditorConfig.editorconfig
+¦   ¦           ¦   Go212.POS.Desktop_afxslb4f_wpftmp.GlobalUsings.g.cs
+¦   ¦           ¦   Go212.POS.Desktop_d5tj2tgr_wpftmp.AssemblyInfo.cs
+¦   ¦           ¦   Go212.POS.Desktop_d5tj2tgr_wpftmp.AssemblyInfoInputs.cache
+¦   ¦           ¦   Go212.POS.Desktop_d5tj2tgr_wpftmp.assets.cache
+¦   ¦           ¦   Go212.POS.Desktop_d5tj2tgr_wpftmp.GeneratedMSBuildEditorConfig.editorconfig
+¦   ¦           ¦   Go212.POS.Desktop_d5tj2tgr_wpftmp.GlobalUsings.g.cs
+¦   ¦           ¦   Go212.POS.Desktop_duvigmge_wpftmp.AssemblyInfo.cs
+¦   ¦           ¦   Go212.POS.Desktop_duvigmge_wpftmp.AssemblyInfoInputs.cache
+¦   ¦           ¦   Go212.POS.Desktop_duvigmge_wpftmp.assets.cache
+¦   ¦           ¦   Go212.POS.Desktop_duvigmge_wpftmp.GeneratedMSBuildEditorConfig.editorconfig
+¦   ¦           ¦   Go212.POS.Desktop_duvigmge_wpftmp.GlobalUsings.g.cs
+¦   ¦           ¦   Go212.POS.Desktop_epgstrqg_wpftmp.AssemblyInfo.cs
+¦   ¦           ¦   Go212.POS.Desktop_epgstrqg_wpftmp.AssemblyInfoInputs.cache
+¦   ¦           ¦   Go212.POS.Desktop_epgstrqg_wpftmp.assets.cache
+¦   ¦           ¦   Go212.POS.Desktop_epgstrqg_wpftmp.GeneratedMSBuildEditorConfig.editorconfig
+¦   ¦           ¦   Go212.POS.Desktop_epgstrqg_wpftmp.GlobalUsings.g.cs
+¦   ¦           ¦   Go212.POS.Desktop_ey2uaeu2_wpftmp.AssemblyInfo.cs
+¦   ¦           ¦   Go212.POS.Desktop_ey2uaeu2_wpftmp.AssemblyInfoInputs.cache
+¦   ¦           ¦   Go212.POS.Desktop_ey2uaeu2_wpftmp.assets.cache
+¦   ¦           ¦   Go212.POS.Desktop_ey2uaeu2_wpftmp.GeneratedMSBuildEditorConfig.editorconfig
+¦   ¦           ¦   Go212.POS.Desktop_ey2uaeu2_wpftmp.GlobalUsings.g.cs
+¦   ¦           ¦   Go212.POS.Desktop_iev5hfi3_wpftmp.AssemblyInfo.cs
+¦   ¦           ¦   Go212.POS.Desktop_iev5hfi3_wpftmp.AssemblyInfoInputs.cache
+¦   ¦           ¦   Go212.POS.Desktop_iev5hfi3_wpftmp.assets.cache
+¦   ¦           ¦   Go212.POS.Desktop_iev5hfi3_wpftmp.GeneratedMSBuildEditorConfig.editorconfig
+¦   ¦           ¦   Go212.POS.Desktop_iev5hfi3_wpftmp.GlobalUsings.g.cs
+¦   ¦           ¦   Go212.POS.Desktop_inipcyuh_wpftmp.AssemblyInfo.cs
+¦   ¦           ¦   Go212.POS.Desktop_inipcyuh_wpftmp.AssemblyInfoInputs.cache
+¦   ¦           ¦   Go212.POS.Desktop_inipcyuh_wpftmp.assets.cache
+¦   ¦           ¦   Go212.POS.Desktop_inipcyuh_wpftmp.GeneratedMSBuildEditorConfig.editorconfig
+¦   ¦           ¦   Go212.POS.Desktop_inipcyuh_wpftmp.GlobalUsings.g.cs
+¦   ¦           ¦   Go212.POS.Desktop_jk1icq4q_wpftmp.AssemblyInfo.cs
+¦   ¦           ¦   Go212.POS.Desktop_jk1icq4q_wpftmp.AssemblyInfoInputs.cache
+¦   ¦           ¦   Go212.POS.Desktop_jk1icq4q_wpftmp.assets.cache
+¦   ¦           ¦   Go212.POS.Desktop_jk1icq4q_wpftmp.GeneratedMSBuildEditorConfig.editorconfig
+¦   ¦           ¦   Go212.POS.Desktop_jk1icq4q_wpftmp.GlobalUsings.g.cs
+¦   ¦           ¦   Go212.POS.Desktop_lloa5sod_wpftmp.AssemblyInfo.cs
+¦   ¦           ¦   Go212.POS.Desktop_lloa5sod_wpftmp.AssemblyInfoInputs.cache
+¦   ¦           ¦   Go212.POS.Desktop_lloa5sod_wpftmp.assets.cache
+¦   ¦           ¦   Go212.POS.Desktop_lloa5sod_wpftmp.GeneratedMSBuildEditorConfig.editorconfig
+¦   ¦           ¦   Go212.POS.Desktop_lloa5sod_wpftmp.GlobalUsings.g.cs
+¦   ¦           ¦   Go212.POS.Desktop_lloa5sod_wpftmp.sourcelink.json
+¦   ¦           ¦   Go212.POS.Desktop_meoja3jo_wpftmp.AssemblyInfo.cs
+¦   ¦           ¦   Go212.POS.Desktop_meoja3jo_wpftmp.AssemblyInfoInputs.cache
+¦   ¦           ¦   Go212.POS.Desktop_meoja3jo_wpftmp.assets.cache
+¦   ¦           ¦   Go212.POS.Desktop_meoja3jo_wpftmp.GeneratedMSBuildEditorConfig.editorconfig
+¦   ¦           ¦   Go212.POS.Desktop_meoja3jo_wpftmp.GlobalUsings.g.cs
+¦   ¦           ¦   Go212.POS.Desktop_niznvtz1_wpftmp.AssemblyInfo.cs
+¦   ¦           ¦   Go212.POS.Desktop_niznvtz1_wpftmp.AssemblyInfoInputs.cache
+¦   ¦           ¦   Go212.POS.Desktop_niznvtz1_wpftmp.assets.cache
+¦   ¦           ¦   Go212.POS.Desktop_niznvtz1_wpftmp.GeneratedMSBuildEditorConfig.editorconfig
+¦   ¦           ¦   Go212.POS.Desktop_niznvtz1_wpftmp.GlobalUsings.g.cs
+¦   ¦           ¦   Go212.POS.Desktop_sa50uj0s_wpftmp.AssemblyInfo.cs
+¦   ¦           ¦   Go212.POS.Desktop_sa50uj0s_wpftmp.AssemblyInfoInputs.cache
+¦   ¦           ¦   Go212.POS.Desktop_sa50uj0s_wpftmp.assets.cache
+¦   ¦           ¦   Go212.POS.Desktop_sa50uj0s_wpftmp.GeneratedMSBuildEditorConfig.editorconfig
+¦   ¦           ¦   Go212.POS.Desktop_sa50uj0s_wpftmp.GlobalUsings.g.cs
+¦   ¦           ¦   Go212.POS.Desktop_timjln3k_wpftmp.AssemblyInfo.cs
+¦   ¦           ¦   Go212.POS.Desktop_timjln3k_wpftmp.AssemblyInfoInputs.cache
+¦   ¦           ¦   Go212.POS.Desktop_timjln3k_wpftmp.assets.cache
+¦   ¦           ¦   Go212.POS.Desktop_timjln3k_wpftmp.GeneratedMSBuildEditorConfig.editorconfig
+¦   ¦           ¦   Go212.POS.Desktop_timjln3k_wpftmp.GlobalUsings.g.cs
+¦   ¦           ¦   Go212.POS.Desktop_tvggdr5n_wpftmp.AssemblyInfo.cs
+¦   ¦           ¦   Go212.POS.Desktop_tvggdr5n_wpftmp.AssemblyInfoInputs.cache
+¦   ¦           ¦   Go212.POS.Desktop_tvggdr5n_wpftmp.assets.cache
+¦   ¦           ¦   Go212.POS.Desktop_tvggdr5n_wpftmp.GeneratedMSBuildEditorConfig.editorconfig
+¦   ¦           ¦   Go212.POS.Desktop_tvggdr5n_wpftmp.GlobalUsings.g.cs
+¦   ¦           ¦   Go212.POS.Desktop_v1j2ms4s_wpftmp.AssemblyInfo.cs
+¦   ¦           ¦   Go212.POS.Desktop_v1j2ms4s_wpftmp.AssemblyInfoInputs.cache
+¦   ¦           ¦   Go212.POS.Desktop_v1j2ms4s_wpftmp.assets.cache
+¦   ¦           ¦   Go212.POS.Desktop_v1j2ms4s_wpftmp.GeneratedMSBuildEditorConfig.editorconfig
+¦   ¦           ¦   Go212.POS.Desktop_v1j2ms4s_wpftmp.GlobalUsings.g.cs
+¦   ¦           ¦   Go212.POS.Desktop_vah4fwx5_wpftmp.AssemblyInfo.cs
+¦   ¦           ¦   Go212.POS.Desktop_vah4fwx5_wpftmp.AssemblyInfoInputs.cache
+¦   ¦           ¦   Go212.POS.Desktop_vah4fwx5_wpftmp.assets.cache
+¦   ¦           ¦   Go212.POS.Desktop_vah4fwx5_wpftmp.GeneratedMSBuildEditorConfig.editorconfig
+¦   ¦           ¦   Go212.POS.Desktop_vah4fwx5_wpftmp.GlobalUsings.g.cs
+¦   ¦           ¦   Go212.POS.Desktop_vmezh45s_wpftmp.AssemblyInfo.cs
+¦   ¦           ¦   Go212.POS.Desktop_vmezh45s_wpftmp.AssemblyInfoInputs.cache
+¦   ¦           ¦   Go212.POS.Desktop_vmezh45s_wpftmp.assets.cache
+¦   ¦           ¦   Go212.POS.Desktop_vmezh45s_wpftmp.GeneratedMSBuildEditorConfig.editorconfig
+¦   ¦           ¦   Go212.POS.Desktop_vmezh45s_wpftmp.GlobalUsings.g.cs
+¦   ¦           ¦   Go212.POS.Desktop_wd3ss4r2_wpftmp.AssemblyInfo.cs
+¦   ¦           ¦   Go212.POS.Desktop_wd3ss4r2_wpftmp.AssemblyInfoInputs.cache
+¦   ¦           ¦   Go212.POS.Desktop_wd3ss4r2_wpftmp.assets.cache
+¦   ¦           ¦   Go212.POS.Desktop_wd3ss4r2_wpftmp.GeneratedMSBuildEditorConfig.editorconfig
+¦   ¦           ¦   Go212.POS.Desktop_wd3ss4r2_wpftmp.GlobalUsings.g.cs
+¦   ¦           ¦   Go212.POS.Desktop_ydwqyz22_wpftmp.AssemblyInfo.cs
+¦   ¦           ¦   Go212.POS.Desktop_ydwqyz22_wpftmp.AssemblyInfoInputs.cache
+¦   ¦           ¦   Go212.POS.Desktop_ydwqyz22_wpftmp.assets.cache
+¦   ¦           ¦   Go212.POS.Desktop_ydwqyz22_wpftmp.GeneratedMSBuildEditorConfig.editorconfig
+¦   ¦           ¦   Go212.POS.Desktop_ydwqyz22_wpftmp.GlobalUsings.g.cs
+¦   ¦           ¦   Go212.POS.Desktop_yy2ndakh_wpftmp.AssemblyInfo.cs
+¦   ¦           ¦   Go212.POS.Desktop_yy2ndakh_wpftmp.AssemblyInfoInputs.cache
+¦   ¦           ¦   Go212.POS.Desktop_yy2ndakh_wpftmp.assets.cache
+¦   ¦           ¦   Go212.POS.Desktop_yy2ndakh_wpftmp.GeneratedMSBuildEditorConfig.editorconfig
+¦   ¦           ¦   Go212.POS.Desktop_yy2ndakh_wpftmp.GlobalUsings.g.cs
+¦   ¦           ¦   Go212.POS.Desktop_z2fct4qf_wpftmp.AssemblyInfo.cs
+¦   ¦           ¦   Go212.POS.Desktop_z2fct4qf_wpftmp.AssemblyInfoInputs.cache
+¦   ¦           ¦   Go212.POS.Desktop_z2fct4qf_wpftmp.assets.cache
+¦   ¦           ¦   Go212.POS.Desktop_z2fct4qf_wpftmp.GeneratedMSBuildEditorConfig.editorconfig
+¦   ¦           ¦   Go212.POS.Desktop_z2fct4qf_wpftmp.GlobalUsings.g.cs
+¦   ¦           ¦   Go212.POS.dll
+¦   ¦           ¦   Go212.POS.g.resources
+¦   ¦           ¦   Go212.POS.pdb
+¦   ¦           ¦   Go212.POS_MarkupCompile.cache
+¦   ¦           ¦   Go212.POS_MarkupCompile.lref
+¦   ¦           ¦   
+¦   ¦           +---ref
+¦   ¦           ¦       Go212.POS.dll
+¦   ¦           ¦       
+¦   ¦           +---refint
+¦   ¦           ¦       Go212.POS.dll
+¦   ¦           ¦       
+¦   ¦           +---Styles
+¦   ¦           ¦       Buttons.baml
+¦   ¦           ¦       Colors.baml
+¦   ¦           ¦       Controls.baml
+¦   ¦           ¦       DataGrid.baml
+¦   ¦           ¦       Typography.baml
+¦   ¦           ¦       
+¦   ¦           +---Views
+¦   ¦               +---Home
+¦   ¦               ¦       HomeView.baml
+¦   ¦               ¦       HomeView.g.cs
+¦   ¦               ¦       MainWindow.baml
+¦   ¦               ¦       MainWindow.g.cs
+¦   ¦               ¦       
+¦   ¦               +---Login
+¦   ¦               ¦       LoginWindow.baml
+¦   ¦               ¦       LoginWindow.g.cs
+¦   ¦               ¦       
+¦   ¦               +---Management
+¦   ¦               ¦       ManagementView.baml
+¦   ¦               ¦       ManagementView.g.cs
+¦   ¦               ¦       
+¦   ¦               +---POS
+¦   ¦               ¦       POSView.baml
+¦   ¦               ¦       POSView.g.cs
+¦   ¦               ¦       
+¦   ¦               +---Products
+¦   ¦               ¦       ProductsView.baml
+¦   ¦               ¦       ProductsView.g.cs
+¦   ¦               ¦       
+¦   ¦               +---Reports
+¦   ¦               ¦       ReportsView.baml
+¦   ¦               ¦       ReportsView.g.cs
+¦   ¦               ¦       
+¦   ¦               +---Settings
+¦   ¦               ¦       SettingsView.baml
+¦   ¦               ¦       SettingsView.g.cs
+¦   ¦               ¦       
+¦   ¦               +---Stock
+¦   ¦                       StockView.baml
+¦   ¦                       StockView.g.cs
+¦   ¦                       
+¦   +---Styles
+¦   ¦       Buttons.xaml
+¦   ¦       Colors.xaml
+¦   ¦       Controls.xaml
+¦   ¦       DataGrid.xaml
+¦   ¦       Typography.xaml
+¦   ¦       
+¦   +---ViewModels
+¦   ¦       LoginViewModel.cs
+¦   ¦       MainViewModel.cs
+¦   ¦       OtherViewModels.cs
+¦   ¦       POSViewModel.cs
+¦   ¦       
+¦   +---Views
+¦       +---Home
+¦       ¦       HomeView.xaml
+¦       ¦       HomeView.xaml.cs
+¦       ¦       MainWindow.xaml
+¦       ¦       MainWindow.xaml.cs
+¦       ¦       
+¦       +---Login
+¦       ¦       LoginWindow.xaml
+¦       ¦       LoginWindow.xaml.cs
+¦       ¦       
+¦       +---Management
+¦       ¦       ManagementView.xaml
+¦       ¦       ManagementView.xaml.cs
+¦       ¦       
+¦       +---POS
+¦       ¦       POSView.xaml
+¦       ¦       POSView.xaml.cs
+¦       ¦       
+¦       +---Products
+¦       ¦       ProductsView.xaml
+¦       ¦       ProductsView.xaml.cs
+¦       ¦       
+¦       +---Reports
+¦       ¦       ReportsView.xaml
+¦       ¦       ReportsView.xaml.cs
+¦       ¦       
+¦       +---Settings
+¦       ¦       SettingsView.xaml
+¦       ¦       SettingsView.xaml.cs
+¦       ¦       
+¦       +---Stock
+¦               StockView.xaml
+¦               StockView.xaml.cs
+¦               
++---Go212.POS.Domain
+¦   ¦   Go212.POS.Domain.csproj
+¦   ¦   
+¦   +---bin
+¦   ¦   +---Debug
+¦   ¦       +---net10.0
+¦   ¦               Go212.POS.Domain.deps.json
+¦   ¦               Go212.POS.Domain.dll
+¦   ¦               Go212.POS.Domain.pdb
+¦   ¦               
+¦   +---Entities
+¦   ¦       BaseEntity.cs
+¦   ¦       Entities.cs
+¦   ¦       
+¦   +---Enums
+¦   ¦       Enums.cs
+¦   ¦       
+¦   +---Exceptions
+¦   ¦       DomainExceptions.cs
+¦   ¦       
+¦   +---Interfaces
+¦   ¦       IRepositories.cs
+¦   ¦       
+¦   +---obj
+¦   ¦   ¦   Go212.POS.Domain.csproj.nuget.dgspec.json
+¦   ¦   ¦   Go212.POS.Domain.csproj.nuget.g.props
+¦   ¦   ¦   Go212.POS.Domain.csproj.nuget.g.targets
+¦   ¦   ¦   project.assets.json
+¦   ¦   ¦   project.nuget.cache
+¦   ¦   ¦   
+¦   ¦   +---Debug
+¦   ¦       +---net10.0
+¦   ¦           ¦   .NETCoreApp,Version=v10.0.AssemblyAttributes.cs
+¦   ¦           ¦   Go212.POS.Domain.AssemblyInfo.cs
+¦   ¦           ¦   Go212.POS.Domain.AssemblyInfoInputs.cache
+¦   ¦           ¦   Go212.POS.Domain.assets.cache
+¦   ¦           ¦   Go212.POS.Domain.csproj.CoreCompileInputs.cache
+¦   ¦           ¦   Go212.POS.Domain.csproj.FileListAbsolute.txt
+¦   ¦           ¦   Go212.POS.Domain.dll
+¦   ¦           ¦   Go212.POS.Domain.GeneratedMSBuildEditorConfig.editorconfig
+¦   ¦           ¦   Go212.POS.Domain.GlobalUsings.g.cs
+¦   ¦           ¦   Go212.POS.Domain.pdb
+¦   ¦           ¦   Go212.POS.Domain.sourcelink.json
+¦   ¦           ¦   
+¦   ¦           +---ref
+¦   ¦           ¦       Go212.POS.Domain.dll
+¦   ¦           ¦       
+¦   ¦           +---refint
+¦   ¦                   Go212.POS.Domain.dll
+¦   ¦                   
+¦   +---ValueObjects
++---Go212.POS.Infrastructure
+¦   ¦   Go212.POS.Infrastructure.csproj
+¦   ¦   InfrastructureExtensions.cs
+¦   ¦   
+¦   +---Backup
+¦   ¦       BackupService.cs
+¦   ¦       
+¦   +---bin
+¦   ¦   +---Debug
+¦   ¦       +---net10.0-windows
+¦   ¦           ¦   Go212.POS.Application.dll
+¦   ¦           ¦   Go212.POS.Application.pdb
+¦   ¦           ¦   Go212.POS.Domain.dll
+¦   ¦           ¦   Go212.POS.Domain.pdb
+¦   ¦           ¦   Go212.POS.Infrastructure.deps.json
+¦   ¦           ¦   Go212.POS.Infrastructure.dll
+¦   ¦           ¦   Go212.POS.Infrastructure.pdb
+¦   ¦           ¦   
+¦   ¦           +---LatoFont
+¦   ¦                   Lato-Black.ttf
+¦   ¦                   Lato-BlackItalic.ttf
+¦   ¦                   Lato-Bold.ttf
+¦   ¦                   Lato-BoldItalic.ttf
+¦   ¦                   Lato-ExtraBold.ttf
+¦   ¦                   Lato-ExtraBoldItalic.ttf
+¦   ¦                   Lato-ExtraLight.ttf
+¦   ¦                   Lato-ExtraLightItalic.ttf
+¦   ¦                   Lato-Italic.ttf
+¦   ¦                   Lato-Light.ttf
+¦   ¦                   Lato-LightItalic.ttf
+¦   ¦                   Lato-Medium.ttf
+¦   ¦                   Lato-MediumItalic.ttf
+¦   ¦                   Lato-Regular.ttf
+¦   ¦                   Lato-SemiBold.ttf
+¦   ¦                   Lato-SemiBoldItalic.ttf
+¦   ¦                   Lato-Thin.ttf
+¦   ¦                   Lato-ThinItalic.ttf
+¦   ¦                   OFL.txt
+¦   ¦                   
+¦   +---Data
+¦   ¦   ¦   UnitOfWork.cs
+¦   ¦   ¦   
+¦   ¦   +---Repositories
+¦   ¦   ¦       Repositories.cs
+¦   ¦   ¦       
+¦   ¦   +---Scripts
+¦   ¦           V1__initial_schema.sql
+¦   ¦           V2__seed_data.sql
+¦   ¦           
+¦   +---Hardware
+¦   +---Logging
+¦   +---obj
+¦   ¦   ¦   Go212.POS.Infrastructure.csproj.nuget.dgspec.json
+¦   ¦   ¦   Go212.POS.Infrastructure.csproj.nuget.g.props
+¦   ¦   ¦   Go212.POS.Infrastructure.csproj.nuget.g.targets
+¦   ¦   ¦   project.assets.json
+¦   ¦   ¦   project.nuget.cache
+¦   ¦   ¦   
+¦   ¦   +---Debug
+¦   ¦       +---net10.0-windows
+¦   ¦           ¦   .NETCoreApp,Version=v10.0.AssemblyAttributes.cs
+¦   ¦           ¦   Go212.PO.72C200DA.Up2Date
+¦   ¦           ¦   Go212.POS.Infrastructure.AssemblyInfo.cs
+¦   ¦           ¦   Go212.POS.Infrastructure.AssemblyInfoInputs.cache
+¦   ¦           ¦   Go212.POS.Infrastructure.assets.cache
+¦   ¦           ¦   Go212.POS.Infrastructure.csproj.AssemblyReference.cache
+¦   ¦           ¦   Go212.POS.Infrastructure.csproj.CoreCompileInputs.cache
+¦   ¦           ¦   Go212.POS.Infrastructure.csproj.FileListAbsolute.txt
+¦   ¦           ¦   Go212.POS.Infrastructure.dll
+¦   ¦           ¦   Go212.POS.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+¦   ¦           ¦   Go212.POS.Infrastructure.GlobalUsings.g.cs
+¦   ¦           ¦   Go212.POS.Infrastructure.pdb
+¦   ¦           ¦   Go212.POS.Infrastructure.sourcelink.json
+¦   ¦           ¦   
+¦   ¦           +---ref
+¦   ¦           ¦       Go212.POS.Infrastructure.dll
+¦   ¦           ¦       
+¦   ¦           +---refint
+¦   ¦                   Go212.POS.Infrastructure.dll
+¦   ¦                   
+¦   +---Printing
++---Go212.POS.Installer
++---Go212.POS.Tests
+    ¦   AuthServiceTests.cs
+    ¦   Go212.POS.Tests.csproj
+    ¦   
+    +---bin
+    ¦   +---Debug
+    ¦       +---net10.0-windows
+    ¦           ¦   .msCoverageSourceRootsMapping_Go212.POS.Tests
+    ¦           ¦   BCrypt.Net-Next.dll
+    ¦           ¦   Castle.Core.dll
+    ¦           ¦   Dapper.dll
+    ¦           ¦   FluentAssertions.dll
+    ¦           ¦   FluentValidation.dll
+    ¦           ¦   Go212.POS.Application.dll
+    ¦           ¦   Go212.POS.Application.pdb
+    ¦           ¦   Go212.POS.Domain.dll
+    ¦           ¦   Go212.POS.Domain.pdb
+    ¦           ¦   Go212.POS.Infrastructure.dll
+    ¦           ¦   Go212.POS.Infrastructure.pdb
+    ¦           ¦   Go212.POS.Tests.deps.json
+    ¦           ¦   Go212.POS.Tests.dll
+    ¦           ¦   Go212.POS.Tests.pdb
+    ¦           ¦   Go212.POS.Tests.runtimeconfig.json
+    ¦           ¦   Microsoft.Extensions.Configuration.Abstractions.dll
+    ¦           ¦   Microsoft.Extensions.Configuration.dll
+    ¦           ¦   Microsoft.Extensions.Configuration.FileExtensions.dll
+    ¦           ¦   Microsoft.Extensions.Configuration.Json.dll
+    ¦           ¦   Microsoft.Extensions.DependencyInjection.Abstractions.dll
+    ¦           ¦   Microsoft.Extensions.DependencyInjection.dll
+    ¦           ¦   Microsoft.Extensions.FileProviders.Abstractions.dll
+    ¦           ¦   Microsoft.Extensions.FileProviders.Physical.dll
+    ¦           ¦   Microsoft.Extensions.FileSystemGlobbing.dll
+    ¦           ¦   Microsoft.Extensions.Logging.Abstractions.dll
+    ¦           ¦   Microsoft.Extensions.Primitives.dll
+    ¦           ¦   Microsoft.TestPlatform.CommunicationUtilities.dll
+    ¦           ¦   Microsoft.TestPlatform.CoreUtilities.dll
+    ¦           ¦   Microsoft.TestPlatform.CrossPlatEngine.dll
+    ¦           ¦   Microsoft.TestPlatform.PlatformAbstractions.dll
+    ¦           ¦   Microsoft.TestPlatform.Utilities.dll
+    ¦           ¦   Microsoft.VisualStudio.CodeCoverage.Shim.dll
+    ¦           ¦   Microsoft.VisualStudio.TestPlatform.Common.dll
+    ¦           ¦   Microsoft.VisualStudio.TestPlatform.ObjectModel.dll
+    ¦           ¦   Moq.dll
+    ¦           ¦   MySqlConnector.dll
+    ¦           ¦   Newtonsoft.Json.dll
+    ¦           ¦   QuestPDF.dll
+    ¦           ¦   Serilog.dll
+    ¦           ¦   Serilog.Sinks.File.dll
+    ¦           ¦   System.Diagnostics.EventLog.dll
+    ¦           ¦   testhost.dll
+    ¦           ¦   testhost.exe
+    ¦           ¦   xunit.abstractions.dll
+    ¦           ¦   xunit.assert.dll
+    ¦           ¦   xunit.core.dll
+    ¦           ¦   xunit.execution.dotnet.dll
+    ¦           ¦   xunit.runner.visualstudio.testadapter.dll
+    ¦           ¦   
+    ¦           +---cs
+    ¦           ¦       Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+    ¦           ¦       Microsoft.TestPlatform.CoreUtilities.resources.dll
+    ¦           ¦       Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+    ¦           ¦       Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+    ¦           ¦       Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+    ¦           ¦       
+    ¦           +---de
+    ¦           ¦       Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+    ¦           ¦       Microsoft.TestPlatform.CoreUtilities.resources.dll
+    ¦           ¦       Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+    ¦           ¦       Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+    ¦           ¦       Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+    ¦           ¦       
+    ¦           +---es
+    ¦           ¦       Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+    ¦           ¦       Microsoft.TestPlatform.CoreUtilities.resources.dll
+    ¦           ¦       Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+    ¦           ¦       Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+    ¦           ¦       Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+    ¦           ¦       
+    ¦           +---fr
+    ¦           ¦       Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+    ¦           ¦       Microsoft.TestPlatform.CoreUtilities.resources.dll
+    ¦           ¦       Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+    ¦           ¦       Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+    ¦           ¦       Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+    ¦           ¦       
+    ¦           +---it
+    ¦           ¦       Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+    ¦           ¦       Microsoft.TestPlatform.CoreUtilities.resources.dll
+    ¦           ¦       Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+    ¦           ¦       Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+    ¦           ¦       Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+    ¦           ¦       
+    ¦           +---ja
+    ¦           ¦       Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+    ¦           ¦       Microsoft.TestPlatform.CoreUtilities.resources.dll
+    ¦           ¦       Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+    ¦           ¦       Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+    ¦           ¦       Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+    ¦           ¦       
+    ¦           +---ko
+    ¦           ¦       Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+    ¦           ¦       Microsoft.TestPlatform.CoreUtilities.resources.dll
+    ¦           ¦       Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+    ¦           ¦       Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+    ¦           ¦       Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+    ¦           ¦       
+    ¦           +---LatoFont
+    ¦           ¦       Lato-Black.ttf
+    ¦           ¦       Lato-BlackItalic.ttf
+    ¦           ¦       Lato-Bold.ttf
+    ¦           ¦       Lato-BoldItalic.ttf
+    ¦           ¦       Lato-ExtraBold.ttf
+    ¦           ¦       Lato-ExtraBoldItalic.ttf
+    ¦           ¦       Lato-ExtraLight.ttf
+    ¦           ¦       Lato-ExtraLightItalic.ttf
+    ¦           ¦       Lato-Italic.ttf
+    ¦           ¦       Lato-Light.ttf
+    ¦           ¦       Lato-LightItalic.ttf
+    ¦           ¦       Lato-Medium.ttf
+    ¦           ¦       Lato-MediumItalic.ttf
+    ¦           ¦       Lato-Regular.ttf
+    ¦           ¦       Lato-SemiBold.ttf
+    ¦           ¦       Lato-SemiBoldItalic.ttf
+    ¦           ¦       Lato-Thin.ttf
+    ¦           ¦       Lato-ThinItalic.ttf
+    ¦           ¦       OFL.txt
+    ¦           ¦       
+    ¦           +---pl
+    ¦           ¦       Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+    ¦           ¦       Microsoft.TestPlatform.CoreUtilities.resources.dll
+    ¦           ¦       Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+    ¦           ¦       Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+    ¦           ¦       Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+    ¦           ¦       
+    ¦           +---pt-BR
+    ¦           ¦       Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+    ¦           ¦       Microsoft.TestPlatform.CoreUtilities.resources.dll
+    ¦           ¦       Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+    ¦           ¦       Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+    ¦           ¦       Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+    ¦           ¦       
+    ¦           +---ru
+    ¦           ¦       Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+    ¦           ¦       Microsoft.TestPlatform.CoreUtilities.resources.dll
+    ¦           ¦       Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+    ¦           ¦       Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+    ¦           ¦       Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+    ¦           ¦       
+    ¦           +---runtimes
+    ¦           ¦   +---linux-arm64
+    ¦           ¦   ¦   +---native
+    ¦           ¦   ¦           libcrypto.so
+    ¦           ¦   ¦           libjpeg.so.8
+    ¦           ¦   ¦           libqpdf.so
+    ¦           ¦   ¦           libQuestPdfSkia.so
+    ¦           ¦   ¦           
+    ¦           ¦   +---linux-musl-x64
+    ¦           ¦   ¦   +---native
+    ¦           ¦   ¦           libcrypto.so
+    ¦           ¦   ¦           libjpeg.so.8
+    ¦           ¦   ¦           libqpdf.so
+    ¦           ¦   ¦           libQuestPdfSkia.so
+    ¦           ¦   ¦           
+    ¦           ¦   +---linux-x64
+    ¦           ¦   ¦   +---native
+    ¦           ¦   ¦           libcrypto.so
+    ¦           ¦   ¦           libjpeg.so.8
+    ¦           ¦   ¦           libqpdf.so
+    ¦           ¦   ¦           libQuestPdfSkia.so
+    ¦           ¦   ¦           
+    ¦           ¦   +---osx-arm64
+    ¦           ¦   ¦   +---native
+    ¦           ¦   ¦           libcrypto.dylib
+    ¦           ¦   ¦           libjpeg.dylib
+    ¦           ¦   ¦           libqpdf.dylib
+    ¦           ¦   ¦           libQuestPdfSkia.dylib
+    ¦           ¦   ¦           
+    ¦           ¦   +---osx-x64
+    ¦           ¦   ¦   +---native
+    ¦           ¦   ¦           libcrypto.dylib
+    ¦           ¦   ¦           libjpeg.dylib
+    ¦           ¦   ¦           libqpdf.dylib
+    ¦           ¦   ¦           libQuestPdfSkia.dylib
+    ¦           ¦   ¦           
+    ¦           ¦   +---win
+    ¦           ¦   ¦   +---lib
+    ¦           ¦   ¦       +---net6.0
+    ¦           ¦   ¦               System.Diagnostics.EventLog.dll
+    ¦           ¦   ¦               System.Diagnostics.EventLog.Messages.dll
+    ¦           ¦   ¦               
+    ¦           ¦   +---win-x64
+    ¦           ¦   ¦   +---native
+    ¦           ¦   ¦           libgcc_s_seh-1.dll
+    ¦           ¦   ¦           libstdc++-6.dll
+    ¦           ¦   ¦           libwinpthread-1.dll
+    ¦           ¦   ¦           qpdf.dll
+    ¦           ¦   ¦           QuestPdfSkia.dll
+    ¦           ¦   ¦           
+    ¦           ¦   +---win-x86
+    ¦           ¦       +---native
+    ¦           ¦               libgcc_s_dw2-1.dll
+    ¦           ¦               libstdc++-6.dll
+    ¦           ¦               libwinpthread-1.dll
+    ¦           ¦               qpdf.dll
+    ¦           ¦               QuestPdfSkia.dll
+    ¦           ¦               
+    ¦           +---tr
+    ¦           ¦       Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+    ¦           ¦       Microsoft.TestPlatform.CoreUtilities.resources.dll
+    ¦           ¦       Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+    ¦           ¦       Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+    ¦           ¦       Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+    ¦           ¦       
+    ¦           +---zh-Hans
+    ¦           ¦       Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+    ¦           ¦       Microsoft.TestPlatform.CoreUtilities.resources.dll
+    ¦           ¦       Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+    ¦           ¦       Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+    ¦           ¦       Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+    ¦           ¦       
+    ¦           +---zh-Hant
+    ¦                   Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+    ¦                   Microsoft.TestPlatform.CoreUtilities.resources.dll
+    ¦                   Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+    ¦                   Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+    ¦                   Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+    ¦                   
+    +---obj
+        ¦   Go212.POS.Tests.csproj.nuget.dgspec.json
+        ¦   Go212.POS.Tests.csproj.nuget.g.props
+        ¦   Go212.POS.Tests.csproj.nuget.g.targets
+        ¦   project.assets.json
+        ¦   project.nuget.cache
+        ¦   
+        +---Debug
+            +---net10.0-windows
+                ¦   .NETCoreApp,Version=v10.0.AssemblyAttributes.cs
+                ¦   Go212.PO.72762233.Up2Date
+                ¦   Go212.POS.Tests.AssemblyInfo.cs
+                ¦   Go212.POS.Tests.AssemblyInfoInputs.cache
+                ¦   Go212.POS.Tests.assets.cache
+                ¦   Go212.POS.Tests.csproj.AssemblyReference.cache
+                ¦   Go212.POS.Tests.csproj.CoreCompileInputs.cache
+                ¦   Go212.POS.Tests.csproj.FileListAbsolute.txt
+                ¦   Go212.POS.Tests.dll
+                ¦   Go212.POS.Tests.GeneratedMSBuildEditorConfig.editorconfig
+                ¦   Go212.POS.Tests.genruntimeconfig.cache
+                ¦   Go212.POS.Tests.GlobalUsings.g.cs
+                ¦   Go212.POS.Tests.pdb
+                ¦   Go212.POS.Tests.sourcelink.json
+                ¦   
+                +---ref
+                ¦       Go212.POS.Tests.dll
+                ¦       
+                +---refint
+                        Go212.POS.Tests.dll
+                        
