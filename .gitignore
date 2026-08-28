@@ -30,3 +30,4 @@ Thumbs.db
 
 # Installer output
 Go212.POS.Installer/bin/
+.env
