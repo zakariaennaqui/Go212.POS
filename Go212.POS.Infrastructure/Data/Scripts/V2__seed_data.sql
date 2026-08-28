@@ -34,6 +34,12 @@ INSERT INTO Product (Name, CategoryId, PriceHT, TaxRate, Barcode, Unit, StockQua
     ('Sucre 1kg',           4, 8.33,  20.00, '6111245870020', 'kg',        25, 5),
     ('Farine 1kg',          4, 7.50,  20.00, '6111245870021', 'kg',        20, 5);
 
+-- ── Customers (demo) ────────────────────────────────────────
+INSERT INTO Customer (Name, Phone, Email, IsActive) VALUES
+    ('Client Comptant',    '+212 661 234 567', 'client1@example.ma',  TRUE),
+    ('Boulangerie Atlas',  '+212 662 345 678', 'atlas@example.ma',   TRUE),
+    ('Café Central',       '+212 663 456 789', 'central@example.ma', TRUE);
+
 -- ── Default Settings ─────────────────────────────────────────
 INSERT INTO Setting (`Key`, Value, Description) VALUES
     ('vendor.currency',         'MAD',          'Currency code'),

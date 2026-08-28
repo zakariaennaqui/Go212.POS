@@ -550,6 +550,31 @@ public partial class ManagementViewModel : ObservableObject
     }
 
     [RelayCommand]
+    private async Task OpenSessionAsync()
+    {
+        var input = Microsoft.VisualBasic.Interaction.InputBox(
+            "Entrez le fond de caisse initial (MAD) :",
+            "Ouverture de Caisse",
+            "200.00");
+
+        if (string.IsNullOrWhiteSpace(input) || !decimal.TryParse(input, out decimal openingFloat))
+            return;
+
+        try
+        {
+            await _sessionService.OpenSessionAsync(_currentUser.UserId, openingFloat);
+            StatusMessage = $"Session de caisse ouverte avec un fond de {openingFloat:N2} MAD ✓";
+            await LoadAsync();
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Failed to open cash session");
+            System.Windows.MessageBox.Show($"Erreur lors de l'ouverture : {ex.Message}", "Erreur",
+                System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
+        }
+    }
+
+    [RelayCommand]
     private async Task CloseCurrentSessionAsync()
     {
         if (OpenSession is null) return;

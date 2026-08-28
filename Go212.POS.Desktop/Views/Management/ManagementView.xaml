@@ -37,7 +37,15 @@
                         <TextBlock Text="+ Depense"/>
                     </StackPanel>
                 </Button>
-                <Button Command="{Binding CloseCurrentSessionCommand}" Style="{StaticResource DangerButton}">
+                <Button Command="{Binding OpenSessionCommand}" Style="{StaticResource BtnPrimary}" Margin="0,0,8,0"
+                        Visibility="{Binding HasOpenSession, Converter={StaticResource InverseBoolConverter}}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="&#xE713;" FontFamily="Segoe MDL2 Assets" FontSize="12" Margin="0,0,5,0"/>
+                        <TextBlock Text="Ouvrir Caisse"/>
+                    </StackPanel>
+                </Button>
+                <Button Command="{Binding CloseCurrentSessionCommand}" Style="{StaticResource DangerButton}"
+                        Visibility="{Binding HasOpenSession, Converter={StaticResource BoolToVisibleConverter}}">
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="&#xE785;" FontFamily="Segoe MDL2 Assets" FontSize="12" Margin="0,0,5,0"/>
                         <TextBlock Text="Cloture Caisse (Z)"/>
@@ -60,7 +68,9 @@
                         <DataGridTextColumn Header="OUVERTURE"    Binding="{Binding OpenedAt, StringFormat='{}{0:dd/MM/yyyy HH:mm}'}" Width="150"/>
                         <DataGridTextColumn Header="CLOTURE"      Binding="{Binding ClosedAt, StringFormat='{}{0:dd/MM/yyyy HH:mm}'}" Width="150"/>
                         <DataGridTextColumn Header="FOND INITIAL" Binding="{Binding OpeningFloat, StringFormat='{}{0:N2} MAD'}" Width="130"/>
+                        <DataGridTextColumn Header="THEORIQUE"    Binding="{Binding ClosingExpected, StringFormat='{}{0:N2} MAD'}" Width="130"/>
                         <DataGridTextColumn Header="COMPTE"       Binding="{Binding ClosingCounted, StringFormat='{}{0:N2} MAD'}" Width="130"/>
+                        <DataGridTextColumn Header="ECART"        Binding="{Binding ClosingDiscrepancy, StringFormat='{}{0:N2} MAD'}" Width="110"/>
                         <DataGridTemplateColumn Header="ACTIONS"  Width="130">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
