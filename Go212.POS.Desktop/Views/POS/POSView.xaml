@@ -1,0 +1,347 @@
+<UserControl x:Class="Go212.POS.Desktop.Views.POS.POSView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Background="{StaticResource BackgroundBrush}">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>        <!-- Product grid -->
+            <ColumnDefinition Width="380"/>      <!-- Cart panel -->
+        </Grid.ColumnDefinitions>
+
+        <!-- ═══════════════════════════════════════════
+             LEFT — Product search + grid
+             ═══════════════════════════════════════════ -->
+        <Grid Grid.Column="0" Margin="16">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>   <!-- Search bar -->
+                <RowDefinition Height="Auto"/>   <!-- Category filter -->
+                <RowDefinition Height="*"/>      <!-- Product grid -->
+            </Grid.RowDefinitions>
+
+            <!-- Search / scan bar -->
+            <Border Grid.Row="0" Style="{StaticResource CardPanel}" Margin="0,0,0,10" Padding="10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox x:Name="SearchBox"
+                             Grid.Column="0"
+                             Text="{Binding SearchQuery, UpdateSourceTrigger=PropertyChanged}"
+                             Tag="Rechercher ou scanner un produit..."
+                             FontSize="14"
+                             KeyDown="SearchBox_KeyDown"/>
+                    <Button Grid.Column="1"
+                            Style="{StaticResource BtnPrimary}"
+                            Command="{Binding SearchCommand}"
+                            Margin="8,0,0,0" Width="44" Padding="0">
+                        <TextBlock Text="&#xE721;" FontFamily="Segoe MDL2 Assets" FontSize="14"/>
+                    </Button>
+                </Grid>
+            </Border>
+
+            <!-- Category tabs (horizontal scroll) -->
+            <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Auto"
+                          VerticalScrollBarVisibility="Hidden" Margin="0,0,0,10">
+                <ItemsControl ItemsSource="{Binding Categories}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Horizontal"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Button Content="{Binding Name}"
+                                    Style="{StaticResource BtnSecondary}"
+                                    Command="{Binding DataContext.FilterByCategoryCommand, RelativeSource={RelativeSource AncestorType=Window}}"
+                                    CommandParameter="{Binding Id}"
+                                    Padding="14,7" FontSize="12" Margin="0,0,6,0"/>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+
+            <!-- Product card grid -->
+            <ScrollViewer Grid.Row="2">
+                <ItemsControl ItemsSource="{Binding SearchResults}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Button Style="{StaticResource BtnProductCard}"
+                                    Width="150" Height="130" Margin="5"
+                                    Command="{Binding DataContext.AddProductToCartCommand, RelativeSource={RelativeSource AncestorType=Window}}"
+                                    CommandParameter="{Binding}">
+                                <Grid Margin="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="70"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <!-- Product image or placeholder -->
+                                    <Border Grid.Row="0" Background="{StaticResource SurfaceElevated1Brush}">
+                                        <Grid>
+                                            <Image Source="{Binding ImagePath}" Stretch="UniformToFill"/>
+                                            <TextBlock Text="&#xEB9F;" FontFamily="Segoe MDL2 Assets"
+                                                       FontSize="28" Foreground="{StaticResource TextMutedBrush}"
+                                                       HorizontalAlignment="Center" VerticalAlignment="Center"
+                                                       Visibility="{Binding ImagePath, Converter={StaticResource NullToCollapsedConverter}}"/>
+                                        </Grid>
+                                    </Border>
+                                    <!-- Info -->
+                                    <StackPanel Grid.Row="1" Margin="8,6,8,6">
+                                        <TextBlock Text="{Binding Name}"
+                                                   FontWeight="SemiBold" FontSize="12"
+                                                   TextWrapping="Wrap"
+                                                   MaxHeight="34"/>
+                                        <TextBlock Text="{Binding PriceTTC, StringFormat='{}{0:N2} MAD'}"
+                                                   Style="{StaticResource PriceText}"
+                                                   FontSize="13" Margin="0,2,0,0"/>
+                                        <!-- Low stock badge -->
+                                        <Border Style="{StaticResource BadgeDanger}"
+                                                HorizontalAlignment="Left" Margin="0,2,0,0"
+                                                Visibility="{Binding IsLowStock, Converter={StaticResource BoolToVisibleConverter}}">
+                                            <TextBlock Text="{Binding StockQuantity, StringFormat='Stock: {0}'}"
+                                                       Foreground="{StaticResource DangerBrush}" FontSize="10"/>
+                                        </Border>
+                                    </StackPanel>
+                                </Grid>
+                            </Button>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+        </Grid>
+
+        <!-- ═══════════════════════════════════════════
+             RIGHT — Cart panel (light, sharp)
+             ═══════════════════════════════════════════ -->
+        <Grid Grid.Column="1"
+              Background="White">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>   <!-- Cart header -->
+                <RowDefinition Height="*"/>      <!-- Cart items -->
+                <RowDefinition Height="Auto"/>   <!-- Totals + pay -->
+            </Grid.RowDefinitions>
+
+            <!-- Cart header -->
+            <Border Grid.Row="0"
+                    Background="{StaticResource BackgroundBrush}"
+                    BorderBrush="{StaticResource BorderBrush}"
+                    BorderThickness="1,0,0,1"
+                    Padding="14,10">
+                <Grid>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="&#xE7BF;" FontFamily="Segoe MDL2 Assets"
+                                   FontSize="16" Foreground="{StaticResource TextPrimaryBrush}"
+                                   VerticalAlignment="Center" Margin="0,0,8,0"/>
+                        <TextBlock Text="Panier" FontSize="15" FontWeight="SemiBold"
+                                   Foreground="{StaticResource TextPrimaryBrush}"
+                                   VerticalAlignment="Center"/>
+                    </StackPanel>
+                    <!-- Held tickets -->
+                    <Button HorizontalAlignment="Right"
+                            Style="{StaticResource ActionButton}"
+                            Command="{Binding ShowHeldTicketsCommand}"
+                            Visibility="{Binding HasHeldTickets, Converter={StaticResource BoolToVisibleConverter}}">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="&#xE72D;" FontFamily="Segoe MDL2 Assets" FontSize="11" Margin="0,0,4,0"/>
+                            <TextBlock Text="{Binding HeldTicketCount, StringFormat='{}{0} en attente'}"/>
+                        </StackPanel>
+                    </Button>
+                </Grid>
+            </Border>
+
+            <!-- Cart items list -->
+            <ScrollViewer Grid.Row="1"
+                          BorderBrush="{StaticResource BorderBrush}"
+                          BorderThickness="1,0,0,0">
+                <ItemsControl ItemsSource="{Binding CartItems}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border BorderBrush="{StaticResource BorderBrush}"
+                                    BorderThickness="0,0,0,1"
+                                    Padding="12,10">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+
+                                    <!-- Product name + line total -->
+                                    <TextBlock Grid.Row="0" Grid.Column="0"
+                                               Text="{Binding ProductName}"
+                                               FontWeight="SemiBold" FontSize="13"
+                                               TextWrapping="Wrap"
+                                               Foreground="{StaticResource TextPrimaryBrush}"/>
+                                    <TextBlock Grid.Row="0" Grid.Column="1"
+                                               Text="{Binding LineTotalTTC, StringFormat='{}{0:N2} MAD'}"
+                                               FontWeight="Bold" FontSize="13"
+                                               Foreground="{StaticResource Go212GreenBrush}"
+                                               VerticalAlignment="Top"/>
+
+                                    <!-- Qty controls + unit price -->
+                                    <StackPanel Grid.Row="1" Grid.Column="0"
+                                                Orientation="Horizontal" Margin="0,6,0,0">
+                                        <Button Content="&#x2212;" Width="26" Height="26" FontSize="14"
+                                                Style="{StaticResource BtnSecondary}" Padding="0"
+                                                Command="{Binding DataContext.DecrementQuantityCommand, RelativeSource={RelativeSource AncestorType=Window}}"
+                                                CommandParameter="{Binding}"/>
+                                        <TextBlock Text="{Binding Quantity}"
+                                                   FontSize="13" FontWeight="Bold"
+                                                   Foreground="{StaticResource TextPrimaryBrush}"
+                                                   VerticalAlignment="Center"
+                                                   MinWidth="22" TextAlignment="Center"
+                                                   Margin="6,0"/>
+                                        <Button Content="+" Width="26" Height="26" FontSize="14"
+                                                Style="{StaticResource BtnSecondary}" Padding="0"
+                                                Command="{Binding DataContext.IncrementQuantityCommand, RelativeSource={RelativeSource AncestorType=Window}}"
+                                                CommandParameter="{Binding}"/>
+                                        <TextBlock Text="{Binding UnitPriceTTC, StringFormat='@ {0:N2} MAD'}"
+                                                   Foreground="{StaticResource TextMutedBrush}" FontSize="11"
+                                                   VerticalAlignment="Center" Margin="8,0,0,0"/>
+                                    </StackPanel>
+
+                                    <!-- Remove button -->
+                                    <Button Grid.Row="1" Grid.Column="1"
+                                            Content="&#x2715;" Width="24" Height="24"
+                                            Style="{StaticResource BtnDanger}" Padding="0" FontSize="11"
+                                            Command="{Binding DataContext.RemoveItemCommand, RelativeSource={RelativeSource AncestorType=Window}}"
+                                            CommandParameter="{Binding}"
+                                            VerticalAlignment="Bottom"/>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+
+            <!-- Totals + Pay -->
+            <Grid Grid.Row="2">
+                <!-- Payment panel -->
+                <Border Background="White"
+                        BorderBrush="{StaticResource BorderBrush}"
+                        BorderThickness="1,1,0,0"
+                        Padding="16"
+                        Visibility="{Binding IsPaymentPanelVisible, Converter={StaticResource BoolToVisibleConverter}}">
+                    <StackPanel>
+                        <TextBlock Text="PAIEMENT" Style="{StaticResource FormLabelText}" Margin="0,0,0,12"/>
+
+                        <StackPanel Margin="0,0,0,10">
+                            <Label Content="MONTANT RECU (MAD)" Style="{StaticResource FormLabel}"/>
+                            <TextBox Text="{Binding CashReceived, UpdateSourceTrigger=PropertyChanged}"
+                                     FontSize="20" FontWeight="Bold" TextAlignment="Right"/>
+                        </StackPanel>
+
+                        <!-- Change display -->
+                        <Border Background="{StaticResource Go212GreenLightBrush}"
+                                BorderBrush="{StaticResource Go212GreenBrush}"
+                                BorderThickness="1"
+                                Padding="12,8" Margin="0,0,0,10"
+                                Visibility="{Binding ChangeAmount, Converter={StaticResource NullToCollapsedConverter}}">
+                            <Grid>
+                                <TextBlock Text="RENDU" FontWeight="Bold"
+                                           Foreground="{StaticResource Go212GreenDarkBrush}"/>
+                                <TextBlock Text="{Binding ChangeAmount, StringFormat='{}{0:N2} MAD'}"
+                                           Foreground="{StaticResource Go212GreenDarkBrush}"
+                                           FontWeight="Bold" FontSize="18"
+                                           HorizontalAlignment="Right"/>
+                            </Grid>
+                        </Border>
+
+                        <!-- Payment error -->
+                        <TextBlock Text="{Binding PaymentError}"
+                                   Foreground="{StaticResource DangerBrush}"
+                                   Visibility="{Binding PaymentError, Converter={StaticResource NullToCollapsedConverter}}"
+                                   FontSize="12" TextWrapping="Wrap" Margin="0,0,0,10"/>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Button Grid.Column="0" Content="ANNULER"
+                                    Style="{StaticResource BtnSecondary}"
+                                    Command="{Binding CancelPaymentCommand}"
+                                    Margin="0,0,4,0"/>
+                            <Button Grid.Column="1" Content="&#x2713; VALIDER"
+                                    Style="{StaticResource BtnPrimary}"
+                                    Command="{Binding ProcessPaymentCommand}"
+                                    IsEnabled="{Binding CanPay}"
+                                    Margin="4,0,0,0"/>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+
+                <!-- Normal totals bar (green bottom) -->
+                <Border Background="{StaticResource Go212GreenBrush}"
+                        Padding="16"
+                        Visibility="{Binding IsPaymentPanelVisible, Converter={StaticResource InverseBoolConverter}}">
+                    <StackPanel>
+                        <!-- Subtotals -->
+                        <Grid Margin="0,0,0,4">
+                            <TextBlock Text="Sous-total HT" Foreground="White" Opacity="0.85" FontSize="12"/>
+                            <TextBlock Text="{Binding SubtotalHT, StringFormat='{}{0:N2} MAD'}"
+                                       HorizontalAlignment="Right" Foreground="White" FontSize="12"/>
+                        </Grid>
+                        <Grid Margin="0,0,0,6">
+                            <TextBlock Text="TVA" Foreground="White" Opacity="0.85" FontSize="12"/>
+                            <TextBlock Text="{Binding TaxAmount, StringFormat='{}{0:N2} MAD'}"
+                                       HorizontalAlignment="Right" Foreground="White" FontSize="12"/>
+                        </Grid>
+                        <Separator Background="#44FFFFFF" Margin="0,0,0,6"/>
+
+                        <!-- Grand total -->
+                        <Grid Margin="0,0,0,8">
+                            <TextBlock Text="TOTAL TTC" Foreground="White" FontWeight="Bold" FontSize="15"/>
+                            <TextBlock Text="{Binding TotalTTC, StringFormat='{}{0:N2} MAD'}"
+                                       Foreground="White" FontWeight="Bold" FontSize="26"
+                                       HorizontalAlignment="Right"/>
+                        </Grid>
+
+                        <!-- Pay button (white on green) -->
+                        <Button Style="{StaticResource BtnPrimary}"
+                                Background="White" Foreground="{StaticResource Go212GreenBrush}"
+                                Command="{Binding ShowPaymentPanelCommand}"
+                                IsEnabled="{Binding HasItems}"
+                                Height="56" FontSize="18" Margin="0,2,0,2">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="&#xE8C7;" FontFamily="Segoe MDL2 Assets"
+                                           FontSize="16" Margin="0,0,10,0"/>
+                                <TextBlock Text="PAYER"/>
+                            </StackPanel>
+                        </Button>
+
+                        <!-- Hold + Clear -->
+                        <Grid Margin="0,4,0,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Button Grid.Column="0" Content="Mettre en attente"
+                                    Style="{StaticResource BtnNavItem}"
+                                    Command="{Binding HoldTicketCommand}"
+                                    Foreground="White" Opacity="0.85"
+                                    FontSize="11" HorizontalAlignment="Center"/>
+                            <Button Grid.Column="1" Content="Vider le panier"
+                                    Style="{StaticResource BtnNavItem}"
+                                    Command="{Binding ClearCartCommand}"
+                                    Foreground="White" Opacity="0.7"
+                                    FontSize="11" HorizontalAlignment="Center"/>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

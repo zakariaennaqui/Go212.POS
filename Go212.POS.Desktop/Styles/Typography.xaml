@@ -1,0 +1,84 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Font Sizes -->
+    <system:Double x:Key="FontSizeXS"   xmlns:system="clr-namespace:System;assembly=mscorlib">11</system:Double>
+    <system:Double x:Key="FontSizeSM"   xmlns:system="clr-namespace:System;assembly=mscorlib">12</system:Double>
+    <system:Double x:Key="FontSizeMD"   xmlns:system="clr-namespace:System;assembly=mscorlib">14</system:Double>
+    <system:Double x:Key="FontSizeLG"   xmlns:system="clr-namespace:System;assembly=mscorlib">16</system:Double>
+    <system:Double x:Key="FontSizeXL"   xmlns:system="clr-namespace:System;assembly=mscorlib">20</system:Double>
+    <system:Double x:Key="FontSize2XL"  xmlns:system="clr-namespace:System;assembly=mscorlib">24</system:Double>
+    <system:Double x:Key="FontSize3XL"  xmlns:system="clr-namespace:System;assembly=mscorlib">32</system:Double>
+    <system:Double x:Key="FontSize4XL"  xmlns:system="clr-namespace:System;assembly=mscorlib">40</system:Double>
+
+    <!-- Base TextBlock style -->
+    <Style TargetType="TextBlock" x:Key="BaseText">
+        <Setter Property="FontFamily" Value="Segoe UI"/>
+        <Setter Property="FontSize"   Value="{StaticResource FontSizeMD}"/>
+        <Setter Property="Foreground" Value="{StaticResource TextPrimaryBrush}"/>
+        <Setter Property="TextWrapping" Value="NoWrap"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+
+    <Style TargetType="TextBlock" BasedOn="{StaticResource BaseText}"/>
+
+    <Style TargetType="TextBlock" x:Key="TextSecondary" BasedOn="{StaticResource BaseText}">
+        <Setter Property="Foreground" Value="{StaticResource TextSecondaryBrush}"/>
+        <Setter Property="FontSize"   Value="{StaticResource FontSizeSM}"/>
+    </Style>
+
+    <Style TargetType="TextBlock" x:Key="TextMuted" BasedOn="{StaticResource BaseText}">
+        <Setter Property="Foreground" Value="{StaticResource TextMutedBrush}"/>
+        <Setter Property="FontSize"   Value="{StaticResource FontSizeXS}"/>
+    </Style>
+
+    <Style TargetType="TextBlock" x:Key="Heading1" BasedOn="{StaticResource BaseText}">
+        <Setter Property="FontSize"   Value="{StaticResource FontSize2XL}"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+    </Style>
+
+    <Style TargetType="TextBlock" x:Key="Heading2" BasedOn="{StaticResource BaseText}">
+        <Setter Property="FontSize"   Value="{StaticResource FontSizeXL}"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+    </Style>
+
+    <Style TargetType="TextBlock" x:Key="Heading3" BasedOn="{StaticResource BaseText}">
+        <Setter Property="FontSize"   Value="{StaticResource FontSizeLG}"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+    </Style>
+
+    <Style TargetType="TextBlock" x:Key="TextOnDark" BasedOn="{StaticResource BaseText}">
+        <Setter Property="Foreground" Value="{StaticResource TextOnDarkBrush}"/>
+    </Style>
+
+    <!-- Price / amount display -->
+    <Style TargetType="TextBlock" x:Key="PriceText" BasedOn="{StaticResource BaseText}">
+        <Setter Property="FontSize"   Value="{StaticResource FontSizeLG}"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Foreground" Value="{StaticResource Go212GreenBrush}"/>
+    </Style>
+
+    <Style TargetType="TextBlock" x:Key="TotalPrice" BasedOn="{StaticResource BaseText}">
+        <Setter Property="FontSize"   Value="{StaticResource FontSize3XL}"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Foreground" Value="{StaticResource TextOnDarkBrush}"/>
+    </Style>
+
+    <!-- Label for Label control -->
+    <Style TargetType="Label" x:Key="FormLabel">
+        <Setter Property="FontFamily"   Value="Segoe UI"/>
+        <Setter Property="FontSize"     Value="{StaticResource FontSizeSM}"/>
+        <Setter Property="FontWeight"   Value="SemiBold"/>
+        <Setter Property="Foreground"   Value="{StaticResource TextSecondaryBrush}"/>
+        <Setter Property="Padding"      Value="0,0,0,4"/>
+    </Style>
+
+    <!-- Label for TextBlock control -->
+    <Style TargetType="TextBlock" x:Key="FormLabelText" BasedOn="{StaticResource BaseText}">
+        <Setter Property="FontSize"     Value="{StaticResource FontSizeSM}"/>
+        <Setter Property="FontWeight"   Value="SemiBold"/>
+        <Setter Property="Foreground"   Value="{StaticResource TextSecondaryBrush}"/>
+        <Setter Property="Margin"       Value="0,0,0,4"/>
+    </Style>
+
+</ResourceDictionary>

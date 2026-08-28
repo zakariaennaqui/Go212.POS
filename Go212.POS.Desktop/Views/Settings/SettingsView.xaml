@@ -1,0 +1,79 @@
+<UserControl x:Class="Go212.POS.Desktop.Views.Settings.SettingsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             Background="{StaticResource BackgroundBrush}">
+    <ScrollViewer Padding="20">
+        <StackPanel MaxWidth="780" HorizontalAlignment="Left">
+            <TextBlock Text="Parametres du Systeme" Style="{StaticResource Heading1}" Margin="0,0,0,2"/>
+            <TextBlock Text="Sauvegarde de donnees, configuration magasin et peripheriques"
+                       Style="{StaticResource TextSecondary}" Margin="0,0,0,20"/>
+
+            <!-- Status Banner -->
+            <Border Background="#FFDCFCE7"
+                    BorderBrush="{StaticResource SuccessBrush}"
+                    BorderThickness="0,0,0,0"
+                    Padding="12,8" Margin="0,0,0,16"
+                    Visibility="{Binding StatusMessage, Converter={StaticResource NullToCollapsedConverter}}">
+                <TextBlock Text="{Binding StatusMessage}"
+                           Foreground="{StaticResource SuccessBrush}" FontSize="13"/>
+            </Border>
+
+            <!-- Backup Card -->
+            <Border Style="{StaticResource CardPanel}" Margin="0,0,0,16">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+                        <TextBlock Text="&#xE74E;" FontFamily="Segoe MDL2 Assets"
+                                   FontSize="18" Foreground="{StaticResource Go212GreenBrush}"
+                                   VerticalAlignment="Center" Margin="0,0,10,0"/>
+                        <TextBlock Text="Sauvegarde &amp; Restauration des Donnees"
+                                   Style="{StaticResource Heading2}" VerticalAlignment="Center"/>
+                    </StackPanel>
+                    <TextBlock Text="Creez une sauvegarde complete de la base de donnees locale (SQL compresse) ou restaurez un fichier precedent."
+                               Style="{StaticResource TextSecondary}" TextWrapping="Wrap" Margin="0,0,0,16"/>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Button Style="{StaticResource BtnPrimary}"
+                                Command="{Binding CreateBackupCommand}" Margin="0,0,10,0">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="&#xE74E;" FontFamily="Segoe MDL2 Assets" FontSize="12" Margin="0,0,6,0"/>
+                                <TextBlock Text="Creer une Sauvegarde"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Style="{StaticResource BtnDanger}"
+                                Command="{Binding RestoreBackupCommand}">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="&#xE72C;" FontFamily="Segoe MDL2 Assets" FontSize="12" Margin="0,0,6,0"/>
+                                <TextBlock Text="Restaurer depuis un Fichier..."/>
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <!-- Store Info Card -->
+            <Border Style="{StaticResource CardPanel}">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,16">
+                        <TextBlock Text="&#xE731;" FontFamily="Segoe MDL2 Assets"
+                                   FontSize="18" Foreground="{StaticResource InfoBrush}"
+                                   VerticalAlignment="Center" Margin="0,0,10,0"/>
+                        <TextBlock Text="Informations de l'Etablissement"
+                                   Style="{StaticResource Heading2}" VerticalAlignment="Center"/>
+                    </StackPanel>
+
+                    <Label Content="NOM DE L'ENTREPRISE" Style="{StaticResource FormLabel}"/>
+                    <TextBox Text="GO212 POS Store" IsReadOnly="True" Margin="0,2,0,10"/>
+
+                    <Label Content="DEVISE" Style="{StaticResource FormLabel}"/>
+                    <TextBox Text="MAD (Dirham Marocain)" IsReadOnly="True" Margin="0,2,0,10"/>
+
+                    <Label Content="TAUX DE TVA ACTIFS" Style="{StaticResource FormLabel}"/>
+                    <TextBox Text="20%, 14%, 10%, 7%, 0%" IsReadOnly="True" Margin="0,2,0,0"/>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

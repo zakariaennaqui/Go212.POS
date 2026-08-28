@@ -1,0 +1,32 @@
+# Build outputs
+bin/
+obj/
+*.user
+*.suo
+.vs/
+
+# Local config (contains DB password — NEVER commit)
+appsettings.local.json
+**/appsettings.local.json
+
+# Logs
+logs/
+*.log
+
+# Backups
+*.sql.gz
+*.sql.bak
+
+# User secrets
+secrets.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# NuGet
+*.nupkg
+.nuget/
+
+# Installer output
+Go212.POS.Installer/bin/
